@@ -1,0 +1,177 @@
+lists:
+  # Masculine Onsets: Deep growls and snaps
+  beastkin_onset_masc:
+    - "k": 10
+    - "g": 10
+    - "r": 10
+    - "kr": 8
+    - "gr": 8
+    - "v": 7
+    - "sk": 6
+    - "sn": 6
+    - "kh": 5
+    - "vr": 5
+    - "": 5
+
+  # Feminine Onsets: Sharp snaps and hisses
+  beastkin_onset_femme:
+    - "z": 10
+    - "sh": 10
+    - "th": 9
+    - "v": 8
+    - "s": 8
+    - "zh": 7
+    - "kr": 6
+    - "sk": 6
+    - "h": 6
+    - "n": 5
+    - "": 5
+
+  # Masculine Nuclei: Deep and wide
+  beastkin_nucleus_masc:
+    - "a": 15
+    - "o": 15
+    - "u": 15
+    - "aa": 10
+    - "uu": 10
+    - "au": 8
+    - "u'": 3 # Growl/Stop
+    - "o'": 3
+
+  # Feminine Nuclei: Sharp and high
+  beastkin_nucleus_femme:
+    - "a": 12
+    - "e": 12
+    - "i": 12
+    - "ai": 10
+    - "ia": 8
+    - "ee": 8
+    - "i'": 3 # Snap/Stop
+    - "e'": 3
+  
+  # Masculine Codas: Explosive
+  beastkin_coda_masc:
+    - "k": 15
+    - "g": 12
+    - "r": 12
+    - "rk": 10
+    - "ng": 8
+    - "n": 8
+    - "kh": 6
+
+  # Feminine Codas: Hissing/Flowing
+  beastkin_coda_femme:
+    - "z": 15
+    - "sh": 12
+    - "th": 12
+    - "n": 10
+    - "ng": 10
+    - "sh": 8
+    - "m": 8
+    - "v": 6
+
+  # Beastkin Adjectives (50) - Visceral and elemental
+  beastkin_adj:
+    - "Lock": 10
+    - "Chill": 10
+    - "Cloven": 10
+    - "Sharp": 9
+    - "Blood": 9
+    - "Iron": 8
+    - "Wild": 8
+    - "Swift": 8
+    - "Dark": 7
+    - "Deep": 7
+    - "Grey": 6
+    - "Red": 6
+    - "White": 6
+    - "Black": 6
+    - "Stone": 5
+    - "Storm": 5
+    - "Frost": 5
+    - "Fire": 5
+    - "Flame": 4
+    - "Ember": 4
+    - "Ash": 4
+    - "Grit": 4
+    - "Hard": 4
+    - "Rough": 4
+    - "Tough": 4
+    - "Raw": 4
+    - "Grim": 4
+    - "Pale": 3
+    - "Night": 3
+    - "Dusk": 3
+    - "Dawn": 3
+    - "Wind": 3
+    - "Rain": 3
+    - "Snow": 3
+    - "Ice": 3
+    - "Mud": 3
+    - "Dirt": 3
+    - "Cloud": 3
+    - "Mist": 3
+    - "Sky": 3
+    - "Thunder": 3
+    - "Crag": 3
+    - "Thorny": 3
+    - "Bitter": 3
+    - "Fierce": 3
+    - "Bold": 3
+    - "Steel": 3
+    - "Gold": 2
+    - "Silver": 2
+    - "Bronze": 2
+
+  # Beastkin Nouns (50) - Animalistic and primal
+  beastkin_noun:
+    - "jaw": 10
+    - "maw": 10
+    - "hoof": 10
+    - "claw": 9
+    - "fang": 9
+    - "tooth": 8
+    - "hide": 8
+    - "tail": 8
+    - "wing": 7
+    - "mane": 7
+    - "eye": 6
+    - "ear": 6
+    - "paw": 6
+    - "snout": 5
+    - "horn": 5
+    - "tusk": 5
+    - "spine": 5
+    - "bone": 5
+    - "fur": 4
+    - "pelt": 4
+    - "neck": 4
+    - "rib": 4
+    - "gut": 4
+    - "heart": 4
+    - "lung": 4
+    - "gall": 4
+    - "bite": 4
+    - "howl": 4
+    - "roar": 4
+    - "shriek": 3
+    - "bark": 3
+    - "growl": 3
+    - "snarl": 3
+    - "hiss": 3
+    - "track": 3
+    - "trail": 3
+    - "scent": 3
+    - "breath": 3
+    - "step": 3
+    - "leap": 3
+    - "bound": 3
+    - "grasp": 3
+    - "grip": 3
+    - "crush": 3
+    - "tear": 3
+    - "rip": 2
+    - "shred": 2
+    - "gnash": 2
+    - "rend": 2
+    - "gore": 2
