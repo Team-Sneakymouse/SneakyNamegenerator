@@ -28,3 +28,6 @@ run.bat
 # Web server images directory (volume bind)
 /web/images/*
 !/web/images/.gitkeep
+
+# Reference and work files for development
+/references/
