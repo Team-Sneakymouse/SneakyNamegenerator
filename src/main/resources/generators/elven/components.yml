@@ -67,6 +67,46 @@ lists:
     - "Deep": 6
     - "Dawn": 6
     - "Dusk": 6
+    - "Swift": 5
+    - "Bright": 5
+    - "Pale": 5
+    - "Grey": 5
+    - "Green": 5
+    - "Wild": 5
+    - "Storm": 5
+    - "Frost": 5
+    - "Fire": 5
+    - "Flame": 5
+    - "Ember": 4
+    - "Ash": 4
+    - "Light": 4
+    - "Dark": 4
+    - "Shadow": 4
+    - "Gloom": 4
+    - "Winter": 4
+    - "Summer": 4
+    - "Autumn": 4
+    - "Spring": 4
+    - "Rose": 3
+    - "Thorn": 3
+    - "Briar": 3
+    - "Bloom": 3
+    - "Flower": 3
+    - "Seed": 3
+    - "Root": 3
+    - "Branch": 3
+    - "Bark": 3
+    - "Oak": 3
+    - "Willow": 3
+    - "Pine": 3
+    - "Birch": 3
+    - "Iron": 3
+    - "Steel": 3
+    - "Stone": 3
+    - "Rock": 3
+    - "Mountain": 3
+    - "Hill": 3
+    - "Valley": 3
   
   elven_noun:
     - "sword": 10
@@ -79,3 +119,43 @@ lists:
     - "song": 8
     - "heart": 7
     - "weaver": 7
+    - "blade": 5
+    - "bow": 5
+    - "shield": 5
+    - "wood": 5
+    - "forest": 5
+    - "grove": 5
+    - "lake": 5
+    - "pool": 5
+    - "spring": 5
+    - "falls": 5
+    - "peak": 4
+    - "dale": 4
+    - "glen": 4
+    - "field": 4
+    - "meadow": 4
+    - "plain": 4
+    - "shore": 4
+    - "coast": 4
+    - "isle": 4
+    - "sky": 4
+    - "cloud": 3
+    - "mist": 3
+    - "rain": 3
+    - "snow": 3
+    - "ice": 3
+    - "stone": 3
+    - "rock": 3
+    - "iron": 3
+    - "steel": 3
+    - "silver": 3
+    - "gold": 3
+    - "pearl": 3
+    - "crown": 3
+    - "whisper": 3
+    - "dream": 3
+    - "spirit": 3
+    - "soul": 3
+    - "glow": 3
+    - "spark": 3
+    - "flame": 3
