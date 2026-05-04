@@ -1,0 +1,23 @@
+templates:
+  # Base syllable generation
+  elven_syllable:
+    - "%elven_onset%%elven_nucleus%%elven_coda%"
+
+  # First names: Strong-Weak or Strong-Weak-Weak
+  elven_firstname:
+    - "%elven_syllable%%elven_syllable%": 60
+    - "%elven_syllable%%elven_syllable%%elven_syllable%": 40
+
+  # Modern elven name: Firstname + [Adj][Noun]
+  elven_modern:
+    pattern: "%elven_firstname% %elven_adj%%elven_noun%"
+    capitalization: "(?<=^|\\s)."
+
+  # Traditional elven name: Firstname + Syllabic Lastname
+  elven_traditional_lastname:
+    - "%elven_syllable%%elven_syllable%"
+    - "%elven_syllable%%elven_syllable%%elven_syllable%"
+  
+  elven_traditional:
+    pattern: "%elven_firstname% %elven_traditional_lastname%"
+    capitalization: "(?<=^|\\s)."

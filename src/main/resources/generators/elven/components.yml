@@ -1,0 +1,62 @@
+lists:
+  # Onsets: liquids and nasals
+  elven_onset:
+    - "l": 10
+    - "r": 10
+    - "m": 8
+    - "n": 8
+    - "th": 7
+    - "v": 6
+    - "f": 6
+    - "gal": 5
+    - "cel": 5
+    - "lor": 5
+    - "ae": 4
+    - "ny": 4
+    - "el": 4
+  
+  # Nuclei: Noble vowels and diphthongs
+  elven_nucleus:
+    - "a": 10
+    - "e": 10
+    - "i": 8
+    - "o": 5
+    - "ae": 7
+    - "ai": 7
+    - "ie": 6
+    - "io": 5
+  
+  # Codas: soft or none
+  elven_coda:
+    - "": 50 # Often open syllables
+    - "n": 10
+    - "l": 8
+    - "r": 7
+    - "th": 5
+    - "s": 4
+    - "'": 3 # Hollywood apostrophe!
+
+  # Modern naming components
+  elven_adj:
+    - "Sun": 10
+    - "High": 10
+    - "Moon": 10
+    - "Star": 9
+    - "Night": 8
+    - "Silver": 8
+    - "Gold": 7
+    - "Deep": 6
+    - "Dawn": 6
+    - "Dusk": 6
+  
+  elven_noun:
+    - "sword": 10
+    - "tree": 10
+    - "shadow": 10
+    - "leaf": 9
+    - "flow": 9
+    - "wind": 8
+    - "glade": 8
+    - "song": 8
+    - "heart": 7
+    - "weaver": 7

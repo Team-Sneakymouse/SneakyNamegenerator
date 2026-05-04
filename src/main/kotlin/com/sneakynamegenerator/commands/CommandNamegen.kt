@@ -27,18 +27,48 @@ class CommandNamegen(private val plugin: SneakyNamegenerator) : CommandBase("nam
         commandLabel: String,
         args: Array<out String>,
     ): Boolean {
-        if (sender !is Player) {
-            sender.sendMessage("Only players can use this command.")
+        if (!sender.hasPermission(this.permission!!)) {
+            sender.sendMessage("§cYou do not have permission to use this command.")
             return true
         }
 
         if (args.isEmpty()) {
-            sender.sendMessage("Please provide a type for the name.")
-            return false
+            sender.sendMessage("§cUsage: /namegen <type|reload>")
+            return true
         }
 
-        val type = args[0].lowercase()
+        val action = args[0].lowercase()
+
+        if (action == "reload") {
+            if (!sender.hasPermission("${SneakyNamegenerator.IDENTIFIER}.command.reload")) {
+                sender.sendMessage("§cYou do not have permission to reload the configuration.")
+                return true
+            }
+            plugin.reloadGenerator()
+            sender.sendMessage("§aName generator configuration reloaded!")
+            return true
+        }
+
+        try {
+            val name = SneakyNamegenerator.generator.generate(action)
+            sender.sendMessage("§7Generated name (§f$action§7): §b$name")
+        } catch (e: Exception) {
+            sender.sendMessage("§cError: ${e.message}")
+        }
 
         return true
+    }
+
+    override fun tabComplete(
+        sender: CommandSender,
+        alias: String,
+        args: Array<out String>
+    ): List<String> {
+        if (args.size == 1) {
+            val options = mutableListOf("reload")
+            options.addAll(SneakyNamegenerator.registry.templates.keys)
+            return options.filter { it.startsWith(args[0], ignoreCase = true) }
+        }
+        return emptyList()
     }
 }

@@ -1,6 +1,11 @@
 plugins {
     kotlin("jvm") version "1.9.21"
     id("xyz.jpenilla.run-paper") version "3.0.2"
+    application
+}
+
+application {
+    mainClass.set("com.sneakynamegenerator.MainKt")
 }
 
 group = "com.sneakynamegenerator"
@@ -13,9 +18,10 @@ repositories {
 
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.21.9-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT")
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.21")
     implementation("com.google.code.gson:gson:2.10.1")
+    implementation("org.yaml:snakeyaml:2.2")
 }
 
 kotlin {
@@ -30,7 +36,7 @@ tasks {
     }
     
     runServer {
-        minecraftVersion("1.21.9")
+        minecraftVersion("1.21.4")
     }
     
     jar {
