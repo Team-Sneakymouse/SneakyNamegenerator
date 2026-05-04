@@ -1,0 +1,214 @@
+lists:
+  # Strong Onsets (Initial/Hard)
+  dwarven_onset_strong:
+    - "b": 15
+    - "d": 15
+    - "g": 15
+    - "k": 12
+    - "gr": 10
+    - "br": 10
+    - "dr": 10
+    - "th": 8
+    - "kr": 8
+    - "h": 5
+  
+  # Weak Onsets (Internal/Soft)
+  dwarven_onset_weak:
+    - "r": 15
+    - "l": 15
+    - "m": 12
+    - "n": 12
+    - "v": 10
+    - "f": 8
+    - "s": 8
+    - "th": 10
+    - "": 5
+  
+  # Dwarven Nuclei: Short, sturdy vowels
+  dwarven_nucleus:
+    - "a": 20
+    - "u": 18
+    - "o": 15
+    - "i": 12
+    - "e": 10
+    - "ou": 5
+  
+  # Dwarven Codas: Strong closing sounds
+  dwarven_coda:
+    - "d": 12
+    - "g": 10
+    - "k": 10
+    - "m": 10
+    - "n": 10
+    - "r": 12
+    - "s": 8
+    - "t": 10
+    - "th": 8
+    - "l": 7
+    - "rn": 5
+    - "rd": 5
+    - "rk": 5
+    - "rg": 4
+    - "nk": 4
+  
+  # Dwarven Adjectives (50)
+  dwarven_adj:
+    - "Bronze": 10
+    - "Wild": 10
+    - "Stout": 10
+    - "Iron": 10
+    - "Stone": 10
+    - "Dark": 9
+    - "Deep": 9
+    - "Cold": 8
+    - "Hard": 8
+    - "Strong": 8
+    - "Heavy": 7
+    - "Broad": 7
+    - "Long": 6
+    - "Thick": 6
+    - "Great": 5
+    - "Old": 5
+    - "Ancient": 5
+    - "Red": 5
+    - "Black": 5
+    - "Grey": 5
+    - "Grim": 4
+    - "Hardy": 4
+    - "Rugged": 4
+    - "Tough": 4
+    - "Blunt": 4
+    - "Sharp": 4
+    - "Swift": 3
+    - "Steady": 3
+    - "Solid": 3
+    - "Dense": 3
+    - "Bitter": 3
+    - "Fierce": 3
+    - "Proud": 3
+    - "Bold": 3
+    - "Noble": 3
+    - "Mighty": 3
+    - "Storm": 3
+    - "Frost": 3
+    - "Flame": 3
+    - "Ash": 3
+    - "Rock": 3
+    - "Mountain": 3
+    - "Gravel": 3
+    - "Pebble": 3
+    - "Coal": 3
+    - "Lead": 3
+    - "Steel": 3
+    - "Brass": 3
+    - "Copper": 3
+    - "Gold": 3
+
+  # Dwarven Nouns (Masculine Objects)
+  dwarven_noun_masc:
+    - "beard": 10
+    - "hammer": 10
+    - "axe": 10
+    - "shield": 9
+    - "stone": 9
+    - "rock": 9
+    - "fist": 8
+    - "foot": 8
+    - "arm": 8
+    - "eye": 7
+    - "brow": 7
+    - "helm": 7
+    - "peak": 6
+    - "mine": 6
+    - "cave": 6
+    - "hall": 5
+    - "king": 5
+    - "lord": 5
+    - "ward": 5
+    - "guard": 4
+    - "anvil": 4
+    - "forge": 4
+    - "pick": 4
+    - "shovel": 4
+    - "barrel": 4
+    - "keg": 4
+    - "tankard": 3
+    - "ale": 3
+    - "mead": 3
+    - "maul": 3
+    - "mace": 3
+    - "pike": 3
+    - "lance": 3
+    - "dagger": 3
+    - "knife": 3
+    - "chain": 3
+    - "link": 3
+    - "wall": 3
+    - "gate": 3
+
+  # Dwarven Nouns (Feminine/Craft/Home Objects)
+  dwarven_noun_femme:
+    - "hearth": 10
+    - "loom": 9
+    - "needle": 8
+    - "forge": 9
+    - "spark": 9
+    - "light": 8
+    - "flame": 8
+    - "jewel": 9
+    - "gem": 9
+    - "pearl": 8
+    - "crown": 7
+    - "ring": 7
+    - "necklace": 6
+    - "veil": 6
+    - "robe": 5
+    - "cup": 5
+    - "glass": 5
+    - "whisper": 5
+    - "dream": 5
+    - "spirit": 4
+    - "soul": 4
+    - "glow": 4
+    - "star": 5
+    - "moon": 5
+    - "rose": 4
+    - "bloom": 4
+    - "leaf": 4
+    - "spring": 5
+    - "well": 5
+    - "pool": 5
+    - "bridge": 4
+    - "key": 4
+    - "lock": 4
+    - "door": 3
+    - "gate": 3
+    - "path": 3
+    - "way": 3
+    - "truth": 3
+    - "mark": 3
+
+  # Masculine Endings
+  dwarven_ending_masc:
+    - "in": 10
+    - "ur": 10
+    - "im": 8
+    - "or": 8
+    - "on": 6
+    - "ar": 6
+    - "o": 5
+    - "ath": 5
+    - "al": 5
+  
+  # Feminine Endings
+  dwarven_ending_femme:
+    - "a": 12
+    - "ia": 10
+    - "is": 9
+    - "el": 8
+    - "ra": 8
+    - "lynn": 7
+    - "wyn": 7
+    - "da": 6
+    - "ma": 6
+    - "na": 6

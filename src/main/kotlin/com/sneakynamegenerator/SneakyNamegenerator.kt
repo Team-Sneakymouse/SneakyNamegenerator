@@ -66,6 +66,13 @@ class SneakyNamegenerator : JavaPlugin() {
                 saveResource("generators/elven/components.yml", false)
                 saveResource("generators/elven/templates.yml", false)
             }
+
+            val dwarvenDir = dataFolder.resolve("generators/dwarven")
+            if (!dwarvenDir.exists()) {
+                dwarvenDir.mkdirs()
+                saveResource("generators/dwarven/components.yml", false)
+                saveResource("generators/dwarven/templates.yml", false)
+            }
             
             // Load all yml files recursively
             loader.loadFromDirectory(dataFolder, newRegistry)

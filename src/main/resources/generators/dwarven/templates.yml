@@ -1,0 +1,58 @@
+templates:
+  # Base syllable generation
+  dwarven_syllable_strong:
+    hidden: true
+    variants: ["%dwarven_onset_strong%%dwarven_nucleus%%dwarven_coda%"]
+
+  dwarven_syllable_weak:
+    hidden: true
+    variants: ["%dwarven_onset_weak%%dwarven_nucleus%%dwarven_coda%"]
+
+  # First names: Masc
+  dwarven_firstname_masc:
+    hidden: true
+    variants:
+      - "%dwarven_syllable_strong%%dwarven_ending_masc%": 60
+      - "%dwarven_syllable_strong%%dwarven_syllable_weak%%dwarven_ending_masc%": 40
+    cleanup: "'+(?=\\s|$)|([^aeiou])\\1+"
+
+  # First names: Femme
+  dwarven_firstname_femme:
+    hidden: true
+    variants:
+      - "%dwarven_syllable_strong%%dwarven_ending_femme%": 60
+      - "%dwarven_syllable_strong%%dwarven_syllable_weak%%dwarven_ending_femme%": 40
+    cleanup: "'+(?=\\s|$)|([^aeiou])\\1+"
+
+  # Modern (Clan) Names
+  dwarven_masc_modern:
+    pattern: "%dwarven_firstname_masc% %dwarven_adj%%dwarven_noun_masc%"
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"
+
+  dwarven_femme_modern:
+    pattern: "%dwarven_firstname_femme% %dwarven_adj%%dwarven_noun_femme%"
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"
+
+  # Traditional (Patronymic) Names
+  dwarven_masc_traditional:
+    pattern: "%dwarven_firstname_masc% %dwarven_firstname_masc%son"
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"
+
+  dwarven_femme_traditional:
+    pattern: "%dwarven_firstname_femme% %dwarven_firstname_masc%dottir"
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"
+
+  # Aliases for convenience
+  dwarven_modern:
+    variants:
+      - "%dwarven_masc_modern%": 50
+      - "%dwarven_femme_modern%": 50
+
+  dwarven_traditional:
+    variants:
+      - "%dwarven_masc_traditional%": 50
+      - "%dwarven_femme_traditional%": 50
