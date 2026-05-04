@@ -4,7 +4,6 @@ import org.bukkit.plugin.java.JavaPlugin
 import com.sneakynamegenerator.commands.*
 import com.sneakynamegenerator.generator.*
 import org.bukkit.permissions.Permission
-import org.bukkit.permissions.PermissionDefault
 import java.io.InputStream
 
 class SneakyNamegenerator : JavaPlugin() {
