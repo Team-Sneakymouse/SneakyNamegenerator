@@ -25,7 +25,7 @@ class SneakyNamegenerator : JavaPlugin() {
         logger.info("SneakyNamegenerator plugin has been enabled!")
 
 		// Register commands
-        //
+        server.commandMap.register(IDENTIFIER, CommandNamegen(this))
         
         // Save default config if it doesn't exist
         saveDefaultConfig()
