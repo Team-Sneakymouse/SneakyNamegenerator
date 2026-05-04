@@ -158,7 +158,17 @@ class CommandNamegen(private val plugin: SneakyNamegenerator) : CommandBase("nam
         args: Array<out String>
     ): List<String> {
         if (args.size == 1) {
-            val options = mutableListOf("reload", "next", "prev")
+            val options = mutableListOf<String>()
+            
+            if (sender.hasPermission("sneakynamegenerator.command.reload")) {
+                options.add("reload")
+            }
+            
+            if (sender is Player && SneakyNamegenerator.sessionManager.getSession(sender.uniqueId) != null) {
+                options.add("next")
+                options.add("prev")
+            }
+
             val templates = SneakyNamegenerator.registry.templates
                 .filter { !it.value.hidden && !it.key.startsWith("_") }
                 .keys

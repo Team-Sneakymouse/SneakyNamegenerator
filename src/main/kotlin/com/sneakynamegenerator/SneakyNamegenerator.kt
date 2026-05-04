@@ -3,6 +3,8 @@ package com.sneakynamegenerator
 import org.bukkit.plugin.java.JavaPlugin
 import com.sneakynamegenerator.commands.*
 import com.sneakynamegenerator.generator.*
+import org.bukkit.permissions.Permission
+import org.bukkit.permissions.PermissionDefault
 import java.io.InputStream
 
 class SneakyNamegenerator : JavaPlugin() {
@@ -37,6 +39,10 @@ class SneakyNamegenerator : JavaPlugin() {
 
 		// Register commands
         server.commandMap.register(IDENTIFIER, CommandNamegen(this))
+
+		// Register permission nodes
+		server.pluginManager.addPermission(Permission("${IDENTIFIER}.command.*"))
+		server.pluginManager.addPermission(Permission("${IDENTIFIER}.command.reload"))
     }
 
     fun reloadGenerator() {

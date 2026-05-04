@@ -1,7 +1,7 @@
 name: SneakyNamegenerator
 version: '${version}'
 main: com.sneakynamegenerator.SneakyNamegenerator
-description: A Minecraft Paper plugin designed to create notes for skin previews.
+description: A flexible fantasy name generator plugin with weighted lists and interactive chat UI.
 api-version: '1.21'
 authors: [Team Sneakymouse]
 website: https://rawb.tv
