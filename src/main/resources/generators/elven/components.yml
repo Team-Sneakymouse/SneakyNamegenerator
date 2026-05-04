@@ -1,30 +1,49 @@
 lists:
-  # Onsets: liquids and nasals
-  elven_onset:
-    - "l": 10
-    - "r": 10
-    - "m": 8
-    - "n": 8
-    - "th": 7
-    - "v": 6
-    - "f": 6
-    - "gal": 5
-    - "cel": 5
-    - "lor": 5
-    - "ae": 4
-    - "ny": 4
-    - "el": 4
+  # Strong Onsets (Noble/Impactful)
+  elven_onset_strong:
+    - "l": 15
+    - "r": 12
+    - "th": 10
+    - "dh": 8
+    - "gw": 7
+    - "gal": 6
+    - "cel": 6
+    - "lor": 6
+    - "ae": 5
+    - "ny": 5
+    - "h": 4
   
-  # Nuclei: Noble vowels and diphthongs
-  elven_nucleus:
-    - "a": 10
-    - "e": 10
-    - "i": 8
-    - "o": 5
-    - "ae": 7
-    - "ai": 7
-    - "ie": 6
-    - "io": 5
+  # Weak Onsets (Soft/Liquid)
+  elven_onset_weak:
+    - "l": 20
+    - "r": 15
+    - "m": 12
+    - "n": 12
+    - "v": 8
+    - "f": 8
+    - "s": 10
+    - "sh": 7
+    - "": 5 # Some syllables have no onset
+  
+  # Strong Nuclei (Noble/Diphthongs)
+  elven_nucleus_strong:
+    - "ae": 15
+    - "ai": 12
+    - "eo": 10
+    - "au": 8
+    - "a": 15
+    - "e": 12
+    - "i": 10
+    - "y": 8
+  
+  # Weak Nuclei (Short/Simple)
+  elven_nucleus_weak:
+    - "a": 20
+    - "e": 15
+    - "i": 15
+    - "o": 10
+    - "ie": 8
+    - "ia": 5
   
   # Codas: soft or none
   elven_coda:

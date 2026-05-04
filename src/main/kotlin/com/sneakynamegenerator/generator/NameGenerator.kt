@@ -11,9 +11,14 @@ class NameGenerator(val registry: GeneratorRegistry) {
         val template = registry.templates[type.lowercase()]
             ?: throw IllegalArgumentException("Unknown name type: $type")
 
-        val rawName = registry.expandString(template.variants.pick())
+        var name = registry.expandString(template.variants.pick())
         
-        return applyCapitalization(rawName, template.capitalizationPattern ?: "(?<=^|\\W).")
+        // Apply cleanup
+        template.cleanupPattern?.let { pattern ->
+            name = name.replace(pattern.toRegex(), "")
+        }
+        
+        return applyCapitalization(name, template.capitalizationPattern ?: "(?<=^|\\s).")
     }
 
     private fun applyCapitalization(name: String, patternString: String): String {
