@@ -81,7 +81,8 @@ class ConfigLoader {
                     else -> listOf(WeightedItem(rawVariants.toString(), 1.0))
                 }
                 val cap = content["capitalization"]?.toString()
-                NameTemplate(WeightedList(variantsList), cap)
+                val hidden = content["hidden"] as? Boolean ?: false
+                NameTemplate(WeightedList(variantsList), cap, hidden)
             }
             else -> NameTemplate(WeightedList(listOf(WeightedItem(content.toString(), 1.0))))
         }

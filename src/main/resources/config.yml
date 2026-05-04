@@ -2,3 +2,5 @@
 # This plugin loads all .yml files from this directory and its subdirectories.
 # You can segment your name lists and templates into separate files for better organization.
 # Example: Create a 'generators/elven.yml' or a 'generators/elven/' directory.
+
+default_amount: 8

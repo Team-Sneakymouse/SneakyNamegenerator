@@ -12,6 +12,7 @@ class SneakyNamegenerator : JavaPlugin() {
 		lateinit var instance: SneakyNamegenerator
 		lateinit var registry: GeneratorRegistry
 		lateinit var generator: NameGenerator
+		val sessionManager = SessionManager()
 
 		public fun log(message: String) {
 			instance.logger.info(message)
@@ -46,7 +47,19 @@ class SneakyNamegenerator : JavaPlugin() {
             // Ensure data folder exists
             if (!dataFolder.exists()) {
                 dataFolder.mkdirs()
-                saveDefaultConfig()
+            }
+
+            // Extract default config and generators if missing
+            val configFile = dataFolder.resolve("config.yml")
+            if (!configFile.exists()) {
+                saveResource("config.yml", false)
+            }
+
+            val elvenDir = dataFolder.resolve("generators/elven")
+            if (!elvenDir.exists()) {
+                elvenDir.mkdirs()
+                saveResource("generators/elven/components.yml", false)
+                saveResource("generators/elven/templates.yml", false)
             }
             
             // Load all yml files recursively

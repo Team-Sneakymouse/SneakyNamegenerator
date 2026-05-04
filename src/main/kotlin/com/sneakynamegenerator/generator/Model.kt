@@ -21,7 +21,8 @@ data class WeightedItem<T>(val value: T, val weight: Double = 1.0)
 
 data class NameTemplate(
     val variants: WeightedList<String>,
-    val capitalizationPattern: String? = null
+    val capitalizationPattern: String? = null,
+    val hidden: Boolean = false
 )
 
 class GeneratorRegistry {
