@@ -12,25 +12,25 @@ templates:
   halfling_lastname_bound:
     hidden: true
     variants:
-      - "%=onset%%halfling_food%%halfling_ending_last%": 70
-      - "%=onset%%halfling_syllable%%halfling_ending_last%": 30
+      - "%=onset%%halfling_vowel%%halfling_lastcore%%halfling_ending_last%": 70
+      - "%=onset%%halfling_vowel%%halfling_lastcore%": 30
 
   halfling_firstname_free:
     hidden: true
     variants:
-      - "%halfling_syllable%%halfling_ending_first%": 70
-      - "%halfling_syllable%%halfling_syllable%%halfling_ending_first%": 30
+      - "%halfling_syllable%%halfling_syllable%%halfling_ending_first%": 70
+      - "%halfling_syllable%%halfling_ending_first%": 30
 
   halfling_lastname_free:
     hidden: true
     variants:
       - "%halfling_food%%halfling_ending_last%": 60
-      - "%halfling_syllable%%halfling_ending_last%": 40
+      - "%halfling_syllable%%halfling_syllable%%halfling_ending_last%": 40
 
   halfling_fullname_bound:
     hidden: true
-    pattern: "%=onset:halfling_onset%~%halfling_firstname_bound% %halfling_lastname_bound%"
-    cleanup: "^[^~]*~|([^aeiou])\\1+"
+    pattern: "%=onset!:halfling_onset%%halfling_firstname_bound% %halfling_lastname_bound%"
+    cleanup: "([^aeiou])\\1+"
 
   halfling_fullname_free:
     hidden: true

@@ -50,7 +50,7 @@ lists:
     - "ie": 7
     - "y": 6
     - "o": 3
-    - "": 12
+    - "": 4
 
   halfling_ending_last:
     - "cott": 6
@@ -61,4 +61,15 @@ lists:
     - "foot": 4
     - "leaf": 4
     - "hill": 4
-    - "": 10
+    - "": 3
+
+  halfling_lastcore:
+    - "bey": 6
+    - "hi": 4
+    - "co": 4
+    - "bole": 3
+    - "brem": 3
+    - "toe": 3
+    - "sum": 3
+    - "mib": 2
+    - "mar": 2

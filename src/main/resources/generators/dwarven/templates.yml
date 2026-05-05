@@ -53,55 +53,69 @@ templates:
   dwarven_masc_modern:
     hidden: true
     pattern: "%dwarven_firstname_masc% %dwarven_lastname_modern_masc%"
-    capitalization: "(?<=^|\\s)."
+    capitalization: "(?<=^|\\s)(?!of\\b)."
     cleanup: "'+(?=\\s|$)"
 
   dwarven_femme_modern:
     hidden: true
     pattern: "%dwarven_firstname_femme% %dwarven_lastname_modern_femme%"
-    capitalization: "(?<=^|\\s)."
+    capitalization: "(?<=^|\\s)(?!of\\b)."
     cleanup: "'+(?=\\s|$)"
 
   dwarven_masc_traditional:
     hidden: true
     pattern: "%dwarven_firstname_masc% %dwarven_lastname_traditional_masc%"
-    capitalization: "(?<=^|\\s)."
+    capitalization: "(?<=^|\\s)(?!of\\b)."
     cleanup: "'+(?=\\s|$)"
 
   dwarven_femme_traditional:
     hidden: true
     pattern: "%dwarven_firstname_femme% %dwarven_lastname_traditional_femme%"
-    capitalization: "(?<=^|\\s)."
+    capitalization: "(?<=^|\\s)(?!of\\b)."
     cleanup: "'+(?=\\s|$)"
 
   dwarven_masc_town:
     hidden: true
     pattern: "%dwarven_firstname_masc% %dwarven_lastname_town%"
-    capitalization: "(?<=^|\\s)."
+    capitalization: "(?<=^|\\s)(?!of\\b)."
     cleanup: "'+(?=\\s|$)"
 
   dwarven_femme_town:
     hidden: true
     pattern: "%dwarven_firstname_femme% %dwarven_lastname_town%"
-    capitalization: "(?<=^|\\s)."
+    capitalization: "(?<=^|\\s)(?!of\\b)."
+    cleanup: "'+(?=\\s|$)"
+
+  dwarf_masc_core:
+    hidden: true
+    variants:
+      - "%dwarven_masc_modern%": 55
+      - "%dwarven_masc_traditional%": 30
+      - "%dwarven_masc_town%": 15
+    capitalization: "(?<=^|\\s)(?!of\\b)."
+    cleanup: "'+(?=\\s|$)"
+
+  dwarf_femme_core:
+    hidden: true
+    variants:
+      - "%dwarven_femme_modern%": 55
+      - "%dwarven_femme_traditional%": 30
+      - "%dwarven_femme_town%": 15
+    capitalization: "(?<=^|\\s)(?!of\\b)."
     cleanup: "'+(?=\\s|$)"
 
   dwarf_masc:
     variants:
-      - "%dwarven_masc_modern%": 40
-      - "%dwarven_masc_traditional%": 25
+      - "%dwarf_masc_core%": 70
       - "%viking_masc%": 15
-      - "%dwarven_masc_town%": 10
-      - "%halfling%": 10
-    capitalization: "(?<=^|\\s)."
+      - "%halfling%": 15
+    capitalization: "(?<=^|\\s)(?!of\\b)."
     cleanup: "'+(?=\\s|$)"
 
   dwarf_femme:
     variants:
-      - "%dwarven_femme_modern%": 40
-      - "%dwarven_femme_traditional%": 25
+      - "%dwarf_femme_core%": 70
       - "%viking_femme%": 15
-      - "%dwarven_femme_town%": 10
-      - "%halfling%": 10
-    capitalization: "(?<=^|\\s)."
+      - "%halfling%": 15
+    capitalization: "(?<=^|\\s)(?!of\\b)."
     cleanup: "'+(?=\\s|$)"

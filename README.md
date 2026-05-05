@@ -12,14 +12,17 @@ A powerful, data-driven fantasy name generator plugin for Minecraft (Paper 1.21.
 *   **Modular Configuration**:
     *   **Directory Loading**: Automatically scans and merges all `.yml` files in the plugin folder.
     *   **Hidden Templates**: Hide internal helper templates (like syllables) from tab completion.
-    *   **Cleanup Engine**: Regex-based post-processing to fix generative artifacts (like trailing apostrophes).
+    *   **Cleanup Engine**: Regex-based post-processing (`cleanup`) to fix generative artifacts (like trailing apostrophes).
+    *   **Capitalization Rules**: Regex-based capitalization (`capitalization`) to control casing (e.g. capitalize each word, keep “of” lowercase).
+    *   **Max Length Enforcement**: Per-template `maxLength` with retry logic so outputs stay within limits.
+    *   **Alliteration Support**: Bind/reuse picks inside templates to encourage shared onsets/sounds (useful for halfling-style names).
 *   **CLI Testing Mode**: Test your generation logic directly from the terminal without starting a Minecraft server.
 
 ## Quick Start
 
 1.  Drop the JAR into your `plugins` folder.
 2.  Start the server. The plugin will automatically extract the default templates.
-3.  Type `/namegen elven_modern` or `/namegen elven_traditional` in-game.
+3.  Type `/namegen elf` (or another visible type) in-game.
 
 ## Configuration
 
@@ -38,9 +41,10 @@ templates:
     pattern: "%_syllable%%_syllable%"
     capitalization: "(?<=^|\\s)."
     cleanup: "'+(?=\\s|$)"
+    maxLength: 32
 ```
 
-### weighted Lists
+### Weighted Lists
 Lists can contain simple strings or weighted entries.
 
 ```yaml
@@ -49,6 +53,38 @@ lists:
     - "Red": 10
     - "Blue": 10
     - "Gold": 1 # Rare!
+```
+
+### Template fields
+- **`pattern` / `variants`**: choose a single string (`pattern`) or one/more weighted strings (`variants`). `pattern` is shorthand for a single variant.
+- **`hidden`**: if `true`, the template will not appear in `/namegen` tab-complete.
+- **`cleanup`**: regex applied after generation to remove unwanted artifacts.
+- **`capitalization`**: regex; every match is uppercased (useful for title-casing).
+- **`maxLength`**: maximum output length (default `32`). If exceeded, generation retries (up to 10 attempts).
+
+Note: `cleanup` and `capitalization` apply to the *template being expanded*, including when it is expanded as a nested `%token%`.
+
+### Bind/reuse (alliteration) syntax
+The expander supports binding a resolved token to a variable and reusing it later in the same generation.
+
+- **Bind**: `%=var:token%` resolves `token`, stores the result in `var`, and returns it.
+- **Bind (silent)**: `%=var!:token%` resolves and stores, but returns an empty string (useful when you only want reuse).
+- **Reuse**: `%=var%` returns the previously bound value.
+
+Example (shared onset for alliteration-like coupling):
+
+```yaml
+templates:
+  first_bound:
+    hidden: true
+    variants: ["%=onset%%vowel%%coda%"]
+
+  last_bound:
+    hidden: true
+    variants: ["%=onset%%food%%suffix%"]
+
+  fullname:
+    pattern: "%=onset!:onset_list%%first_bound% %last_bound%"
 ```
 
 ## ⌨️ Commands & Permissions
@@ -64,7 +100,7 @@ lists:
 Speed up your development by testing templates from your terminal:
 
 ```bash
-./gradlew run --args="src/main/resources/generators elven_modern 10"
+./gradlew run --args="src/main/resources/generators elf 10"
 ```
 
 ---

@@ -9,7 +9,7 @@ lists:
     - "sn": 6
     - "tr": 5
     - "r": 4
-    - "": 3
+    - "": 1
 
   goblin_nucleus:
     - "a": 9
@@ -29,7 +29,7 @@ lists:
     - "m": 5
     - "r": 5
     - "t": 4
-    - "": 6
+    - "": 2
 
   goblin_suffix_masc:
     # Reserved suffix-set for goblins only
@@ -67,4 +67,3 @@ lists:
     - "bolt": 5
     - "coin": 5
     - "boot": 4
-    - "spark": 4

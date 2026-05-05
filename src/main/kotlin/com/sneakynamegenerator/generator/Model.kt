@@ -80,15 +80,19 @@ class GeneratorRegistry {
                     val colonIdx = expr.indexOf(':')
                     if (colonIdx >= 0) {
                         // Bind: %=var:token%
-                        val varName = expr.substring(0, colonIdx).trim()
+                        val rawVarName = expr.substring(0, colonIdx).trim()
                         val innerToken = expr.substring(colonIdx + 1).trim()
-                        if (varName.isEmpty() || innerToken.isEmpty()) {
+                        if (rawVarName.isEmpty() || innerToken.isEmpty()) {
                             match.value
                         } else {
+                            val silent = rawVarName.endsWith("!")
+                            val varName = if (silent) rawVarName.dropLast(1) else rawVarName
+                            if (varName.isEmpty()) return@replace match.value
+
                             val resolved = resolve(innerToken, ctx)
                             if (resolved != null) {
                                 ctx[varName] = resolved
-                                resolved
+                                if (silent) "" else resolved
                             } else {
                                 match.value
                             }

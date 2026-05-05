@@ -21,8 +21,8 @@ templates:
   gnome_lastname:
     hidden: true
     variants:
-      - "%gnome_verb%%gnome_noun%": 85
-      - "%halfling_lastname%": 15
+      - "%gnome_verb%%gnome_noun%": 95
+      - "%halfling_lastname%": 5
 
   gnome_masc:
     pattern: "%gnome_firstname_masc% %gnome_lastname%"

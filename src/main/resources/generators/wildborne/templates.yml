@@ -12,16 +12,16 @@ templates:
   wildborne_firstname_masc:
     hidden: true
     variants:
-      - "%wildborne_syllable_masc%": 60
-      - "%wildborne_syllable_masc%%wildborne_syllable_masc%": 40
+      - "%wildborne_syllable_masc%%wildborne_syllable_masc%": 65
+      - "%wildborne_syllable_masc%": 35
     cleanup: "(.)\\1+|(sh|zh|z|s){2,}" # Collapse doubles and sibilant clusters
 
   # First Names: Femme
   wildborne_firstname_femme:
     hidden: true
     variants:
-      - "%wildborne_syllable_femme%": 60
-      - "%wildborne_syllable_femme%%wildborne_syllable_femme%": 40
+      - "%wildborne_syllable_femme%%wildborne_syllable_femme%": 65
+      - "%wildborne_syllable_femme%": 35
     cleanup: "(.)\\1+|(sh|zh|z|s){2,}"
 
   wildborne_lastname_modern:

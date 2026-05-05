@@ -11,7 +11,7 @@ lists:
     - "sn": 6
     - "kh": 5
     - "vr": 5
-    - "": 5
+    - "": 1
 
   # Feminine Onsets: Sharp snaps and hisses
   wildborne_onset_femme:
@@ -25,7 +25,7 @@ lists:
     - "sk": 6
     - "h": 6
     - "n": 5
-    - "": 5
+    - "": 1
 
   # Masculine Nuclei: Deep and wide
   wildborne_nucleus_masc:

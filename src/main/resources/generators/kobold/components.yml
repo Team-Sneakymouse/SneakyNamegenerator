@@ -10,7 +10,6 @@ lists:
     - "sh": 6
     - "ch": 5
     - "h": 4
-    - "": 4
 
   kobold_vowel:
     - "a": 9
@@ -23,12 +22,12 @@ lists:
     - "yo": 3
 
   kobold_coda:
-    - "": 18
+    - "": 8
     - "n": 8
     - "m": 4
-    - "k": 3
-    - "t": 3
-    - "s": 2
+    - "k": 5
+    - "t": 5
+    - "s": 4
 
   kobold_suffix_masc:
     # Reserved suffix-set for kobolds only

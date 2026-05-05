@@ -1,5 +1,5 @@
 lists:
-  viking_first:
+  viking_first_masc:
     - "Erik": 7
     - "Leif": 7
     - "Ivar": 6
@@ -7,11 +7,17 @@ lists:
     - "Ragnar": 5
     - "Harald": 5
     - "Hakon": 4
-    - "Sigrid": 5
-    - "Astrid": 5
-    - "Freya": 5
-    - "Helga": 4
-    - "Inga": 4
+    - "Sten": 4
+    - "Ulf": 4
+
+  viking_first_femme:
+    - "Sigrid": 6
+    - "Astrid": 6
+    - "Freya": 6
+    - "Helga": 5
+    - "Inga": 5
+    - "Thyra": 4
+    - "Kari": 4
 
   viking_patron_masc:
     - "son": 12

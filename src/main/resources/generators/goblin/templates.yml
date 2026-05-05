@@ -7,22 +7,22 @@ templates:
   goblin_firstname_masc:
     hidden: true
     variants:
-      - "%goblin_syllable%%goblin_suffix_masc%": 70
-      - "%goblin_syllable%%goblin_syllable%%goblin_suffix_masc%": 30
+      - "%goblin_syllable%%goblin_syllable%%goblin_suffix_masc%": 65
+      - "%goblin_syllable%%goblin_suffix_masc%": 35
     cleanup: "([^aeiou])\\1+"
 
   goblin_firstname_femme:
     hidden: true
     variants:
-      - "%goblin_syllable%%goblin_suffix_femme%": 70
-      - "%goblin_syllable%%goblin_syllable%%goblin_suffix_femme%": 30
+      - "%goblin_syllable%%goblin_syllable%%goblin_suffix_femme%": 65
+      - "%goblin_syllable%%goblin_suffix_femme%": 35
     cleanup: "([^aeiou])\\1+"
 
   goblin_lastname:
     hidden: true
     variants:
       - "%goblin_verb%%goblin_noun%": 80
-      - "%goblin_noun%%goblin_noun%": 20
+      - "%goblin_verb%%goblin_noun%": 20
 
   goblin_masc:
     pattern: "%goblin_firstname_masc% %goblin_lastname%"

@@ -14,8 +14,9 @@ templates:
   fae_lastname:
     hidden: true
     variants:
-      - "%fae_epithet%%fae_epithet%": 35
-      - "%fae_syllable%%fae_syllable%": 65
+      - "%fae_epithet%%fae_epithet%": 15
+      - "%fae_epithet%": 25
+      - "%fae_syllable%%fae_syllable%": 60
     cleanup: "(.)\\1{2,}"
 
   fae:
