@@ -83,7 +83,8 @@ class ConfigLoader {
                 val cap = content["capitalization"]?.toString()
                 val cleanup = content["cleanup"]?.toString()
                 val hidden = content["hidden"] as? Boolean ?: false
-                NameTemplate(WeightedList(variantsList), cap, cleanup, hidden)
+                val maxLength = (content["maxLength"] as? Number)?.toInt() ?: 32
+                NameTemplate(WeightedList(variantsList), cap, cleanup, hidden, maxLength)
             }
             else -> NameTemplate(WeightedList(listOf(WeightedItem(content.toString(), 1.0))))
         }

@@ -20,6 +20,7 @@ templates:
     pattern: "%elven_firstname% %elven_adj%%elven_noun%"
     capitalization: "(?<=^|\\s)."
     cleanup: "'+(?=\\s|$)"
+    maxLength: 32
 
   # Traditional elven name: Firstname + Syllabic Lastname
   elven_traditional_lastname:

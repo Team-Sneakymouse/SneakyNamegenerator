@@ -23,7 +23,8 @@ data class NameTemplate(
     val variants: WeightedList<String>,
     val capitalizationPattern: String? = null,
     val cleanupPattern: String? = null,
-    val hidden: Boolean = false
+    val hidden: Boolean = false,
+    val maxLength: Int = 32
 )
 
 class GeneratorRegistry {

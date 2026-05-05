@@ -11,14 +11,23 @@ class NameGenerator(val registry: GeneratorRegistry) {
         val template = registry.templates[type.lowercase()]
             ?: throw IllegalArgumentException("Unknown name type: $type")
 
-        var name = registry.expandString(template.variants.pick())
-        
-        // Apply cleanup
-        template.cleanupPattern?.let { pattern ->
-            name = name.replace(pattern.toRegex(), "")
+        val maxAttempts = 10
+        for (attempt in 1..maxAttempts) {
+            var name = registry.expandString(template.variants.pick())
+            
+            // Apply cleanup
+            template.cleanupPattern?.let { pattern ->
+                name = name.replace(pattern.toRegex(), "")
+            }
+            
+            name = applyCapitalization(name, template.capitalizationPattern ?: "(?<=^|\\s).")
+            
+            if (name.length <= template.maxLength) {
+                return name
+            }
         }
         
-        return applyCapitalization(name, template.capitalizationPattern ?: "(?<=^|\\s).")
+        throw IllegalStateException("Failed to generate a name within max length of ${template.maxLength} for template '$type' after 10 attempts.")
     }
 
     private fun applyCapitalization(name: String, patternString: String): String {
