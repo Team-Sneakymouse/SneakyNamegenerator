@@ -1,0 +1,62 @@
+templates:
+  # Base Syllables
+  wildborne_syllable_masc:
+    hidden: true
+    variants: ["%wildborne_onset_masc%%wildborne_nucleus_masc%%wildborne_coda_masc%"]
+
+  wildborne_syllable_femme:
+    hidden: true
+    variants: ["%wildborne_onset_femme%%wildborne_nucleus_femme%%wildborne_coda_femme%"]
+
+  # First Names
+  wildborne_firstname_masc:
+    hidden: true
+    variants:
+      - "%wildborne_syllable_masc%": 60
+      - "%wildborne_syllable_masc%%wildborne_syllable_masc%": 40
+    cleanup: "(.)\\1+|(sh|zh|z|s){2,}" # Collapse doubles and sibilant clusters
+
+  # First Names: Femme
+  wildborne_firstname_femme:
+    hidden: true
+    variants:
+      - "%wildborne_syllable_femme%": 60
+      - "%wildborne_syllable_femme%%wildborne_syllable_femme%": 40
+    cleanup: "(.)\\1+|(sh|zh|z|s){2,}"
+
+  # Modern Names
+  wildborne_masc_modern:
+    pattern: "%wildborne_firstname_masc% %wildborne_adj%%wildborne_noun%"
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"
+
+  wildborne_femme_modern:
+    pattern: "%wildborne_firstname_femme% %wildborne_adj%%wildborne_noun%"
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"
+
+  # Traditional Names (Titles)
+  wildborne_title_adj:
+    hidden: true
+    variants: ["The %wildborne_adj%"]
+
+  wildborne_masc_traditional:
+    pattern: "%wildborne_firstname_masc% %wildborne_title_adj% %wildborne_noun%"
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"
+
+  wildborne_femme_traditional:
+    pattern: "%wildborne_firstname_femme% %wildborne_title_adj% %wildborne_noun%"
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"
+
+  # Aliases
+  wildborne_modern:
+    variants:
+      - "%wildborne_masc_modern%": 50
+      - "%wildborne_femme_modern%": 50
+
+  wildborne_traditional:
+    variants:
+      - "%wildborne_masc_traditional%": 50
+      - "%wildborne_femme_traditional%": 50

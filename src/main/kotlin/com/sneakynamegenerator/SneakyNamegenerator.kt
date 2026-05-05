@@ -74,11 +74,11 @@ class SneakyNamegenerator : JavaPlugin() {
                 saveResource("generators/dwarven/templates.yml", false)
             }
 
-            val beastkinDir = dataFolder.resolve("generators/beastkin")
-            if (!beastkinDir.exists()) {
-                beastkinDir.mkdirs()
-                saveResource("generators/beastkin/components.yml", false)
-                saveResource("generators/beastkin/templates.yml", false)
+            val wildborneDir = dataFolder.resolve("generators/wildborne")
+            if (!wildborneDir.exists()) {
+                wildborneDir.mkdirs()
+                saveResource("generators/wildborne/components.yml", false)
+                saveResource("generators/wildborne/templates.yml", false)
             }
             
             // Load all yml files recursively

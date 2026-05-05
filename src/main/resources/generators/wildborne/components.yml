@@ -1,6 +1,6 @@
 lists:
   # Masculine Onsets: Deep growls and snaps
-  beastkin_onset_masc:
+  wildborne_onset_masc:
     - "k": 10
     - "g": 10
     - "r": 10
@@ -14,7 +14,7 @@ lists:
     - "": 5
 
   # Feminine Onsets: Sharp snaps and hisses
-  beastkin_onset_femme:
+  wildborne_onset_femme:
     - "z": 10
     - "sh": 10
     - "th": 9
@@ -28,7 +28,7 @@ lists:
     - "": 5
 
   # Masculine Nuclei: Deep and wide
-  beastkin_nucleus_masc:
+  wildborne_nucleus_masc:
     - "a": 15
     - "o": 15
     - "u": 15
@@ -39,7 +39,7 @@ lists:
     - "o'": 3
 
   # Feminine Nuclei: Sharp and high
-  beastkin_nucleus_femme:
+  wildborne_nucleus_femme:
     - "a": 12
     - "e": 12
     - "i": 12
@@ -50,7 +50,7 @@ lists:
     - "e'": 3
   
   # Masculine Codas: Explosive
-  beastkin_coda_masc:
+  wildborne_coda_masc:
     - "k": 15
     - "g": 12
     - "r": 12
@@ -60,7 +60,7 @@ lists:
     - "kh": 6
 
   # Feminine Codas: Hissing/Flowing
-  beastkin_coda_femme:
+  wildborne_coda_femme:
     - "z": 15
     - "sh": 12
     - "th": 12
@@ -70,8 +70,8 @@ lists:
     - "m": 8
     - "v": 6
 
-  # Beastkin Adjectives (50) - Visceral and elemental
-  beastkin_adj:
+  # Wildborne Adjectives (50) - Visceral and elemental
+  wildborne_adj:
     - "Lock": 10
     - "Chill": 10
     - "Cloven": 10
@@ -123,8 +123,8 @@ lists:
     - "Silver": 2
     - "Bronze": 2
 
-  # Beastkin Nouns (50) - Animalistic and primal
-  beastkin_noun:
+  # Wildborne Nouns (50) - Animalistic and primal
+  wildborne_noun:
     - "jaw": 10
     - "maw": 10
     - "hoof": 10
