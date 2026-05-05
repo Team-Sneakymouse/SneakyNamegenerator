@@ -4,17 +4,17 @@ import com.sneakynamegenerator.generator.ConfigLoader
 import com.sneakynamegenerator.generator.GeneratorRegistry
 import com.sneakynamegenerator.generator.NameGenerator
 import java.io.File
-import java.io.FileInputStream
 
 fun main(args: Array<out String>) {
     if (args.isEmpty()) {
-        println("Usage: <config_path> <type> [count]")
+        println("Usage: <config_path> <type> [count] [debug|--debug]")
         return
     }
 
     val configPath = args[0]
     val type = args.getOrNull(1) ?: "default"
     val count = args.getOrNull(2)?.toIntOrNull() ?: 1
+    val debug = args.any { it.equals("debug", ignoreCase = true) || it.equals("--debug", ignoreCase = true) }
 
     val configFile = File(configPath)
     if (!configFile.exists()) {
@@ -29,12 +29,34 @@ fun main(args: Array<out String>) {
         
         val generator = NameGenerator(registry)
 
-        println("Generating $count names of type '$type'...")
+        println("=== template: $type")
+        println("Generating $count names of type '$type'${if (debug) " (debug)" else ""}...")
+
+        val rows = mutableListOf<Pair<String, String?>>()
         repeat(count) {
             try {
-                println("- ${generator.generate(type)}")
+                if (debug) {
+                    val res = generator.generateDebug(type)
+                    rows.add(res.result to res.pickedVariant)
+                } else {
+                    rows.add(generator.generate(type) to null)
+                }
             } catch (e: Exception) {
-                println("Error generating '$type': ${e.message}")
+                rows.add("Error generating '$type': ${e.message}" to null)
+            }
+        }
+
+        if (!debug) {
+            for ((name, _) in rows) {
+                println("- $name")
+            }
+        } else {
+            val nameColWidth = (rows.maxOfOrNull { it.first.length } ?: 0).coerceAtLeast(20) + 2
+            val variantHeader = "picked_variant/pattern"
+            println("${"name".padEnd(nameColWidth)}$variantHeader")
+            println("${"-".repeat("name".length).padEnd(nameColWidth)}${"-".repeat(variantHeader.length)}")
+            for ((name, picked) in rows) {
+                println("${name.padEnd(nameColWidth)}${picked ?: ""}")
             }
         }
     } catch (e: Exception) {

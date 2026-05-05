@@ -103,4 +103,20 @@ Speed up your development by testing templates from your terminal:
 ./gradlew run --args="src/main/resources/generators elf 10"
 ```
 
+### CLI debug mode
+Add `debug` (or `--debug`) to print which `pattern`/`variant` was picked for each generated name. The output is formatted into fixed columns for easy scanning.
+
+```bash
+./gradlew run --args="src/main/resources/generators dwarf_masc 10 debug"
+```
+
+### Print all visible templates (debug)
+This runs the CLI once per visible template key and prints a 1-name debug row for each:
+
+```bash
+for t in dwarf_masc dwarf_femme elf goblin_masc goblin_femme kobold_masc kobold_femme wildborne_masc wildborne_femme fae believer_masc believer_femme giant_masc giant_femme gnome_masc gnome_femme; do
+  ./gradlew -q run --args="src/main/resources/generators $t 1 debug"
+done
+```
+
 ---

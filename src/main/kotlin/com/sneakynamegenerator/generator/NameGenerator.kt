@@ -4,17 +4,29 @@ import java.util.regex.Pattern
 
 class NameGenerator(val registry: GeneratorRegistry) {
 
+    data class GenerationDebug(
+        val type: String,
+        val pickedVariant: String,
+        val result: String,
+        val attempts: Int,
+    )
+
     /**
      * Generates a name of the specified type.
      */
     fun generate(type: String): String {
+        return generateDebug(type).result
+    }
+
+    fun generateDebug(type: String): GenerationDebug {
         val template = registry.templates[type.lowercase()]
             ?: throw IllegalArgumentException("Unknown name type: $type")
 
-        val ctx = mutableMapOf<String, String>()
         val maxAttempts = 10
         for (attempt in 1..maxAttempts) {
-            var name = registry.expandString(template.variants.pick(), ctx)
+            val ctx = mutableMapOf<String, String>()
+            val picked = template.variants.pick()
+            var name = registry.expandString(picked, ctx)
             
             // Apply cleanup
             template.cleanupPattern?.let { pattern ->
@@ -24,7 +36,12 @@ class NameGenerator(val registry: GeneratorRegistry) {
             name = applyCapitalization(name, template.capitalizationPattern ?: "(?<=^|\\s).")
             
             if (name.length <= template.maxLength) {
-                return name
+                return GenerationDebug(
+                    type = type,
+                    pickedVariant = picked,
+                    result = name,
+                    attempts = attempt,
+                )
             }
         }
         
