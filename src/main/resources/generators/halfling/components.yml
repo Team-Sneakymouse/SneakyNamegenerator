@@ -1,0 +1,64 @@
+lists:
+  halfling_onset:
+    - "b": 9
+    - "br": 7
+    - "d": 7
+    - "dr": 5
+    - "m": 8
+    - "n": 6
+    - "p": 7
+    - "pr": 5
+    - "s": 7
+    - "st": 5
+    - "t": 6
+    - "w": 5
+
+  halfling_vowel:
+    - "a": 7
+    - "e": 9
+    - "i": 7
+    - "o": 8
+    - "u": 5
+    - "ee": 6
+    - "oo": 4
+
+  halfling_coda:
+    - "": 10
+    - "n": 8
+    - "m": 6
+    - "t": 6
+    - "r": 6
+    - "l": 6
+    - "y": 5
+    - "nd": 4
+    - "rry": 3
+
+  halfling_food:
+    - "Butter": 8
+    - "Berry": 8
+    - "Honey": 7
+    - "Muffin": 6
+    - "Biscuit": 6
+    - "Pie": 6
+    - "Crumble": 5
+    - "Jam": 5
+    - "Toffee": 5
+    - "Nut": 4
+
+  halfling_ending_first:
+    - "a": 5
+    - "ie": 7
+    - "y": 6
+    - "o": 3
+    - "": 12
+
+  halfling_ending_last:
+    - "cott": 6
+    - "berry": 8
+    - "bottle": 5
+    - "mire": 4
+    - "brook": 5
+    - "foot": 4
+    - "leaf": 4
+    - "hill": 4
+    - "": 10

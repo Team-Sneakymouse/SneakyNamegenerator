@@ -1,0 +1,45 @@
+lists:
+  fae_onset:
+    - "f": 10
+    - "fl": 8
+    - "s": 8
+    - "sh": 6
+    - "l": 6
+    - "n": 6
+    - "m": 5
+    - "th": 5
+    - "w": 4
+    - "br": 3
+    - "": 4
+
+  fae_nucleus:
+    - "a": 10
+    - "e": 12
+    - "i": 10
+    - "o": 8
+    - "u": 6
+    - "ae": 7
+    - "ia": 6
+    - "ei": 5
+    - "ou": 4
+
+  fae_coda:
+    - "l": 10
+    - "n": 10
+    - "th": 7
+    - "s": 7
+    - "m": 5
+    - "r": 5
+    - "": 8
+
+  fae_epithet:
+    - "Dew": 8
+    - "Moon": 8
+    - "Moss": 7
+    - "Breeze": 6
+    - "Glimmer": 6
+    - "Thistle": 5
+    - "Petal": 5
+    - "Star": 5
+    - "Willow": 5
+    - "Mist": 4

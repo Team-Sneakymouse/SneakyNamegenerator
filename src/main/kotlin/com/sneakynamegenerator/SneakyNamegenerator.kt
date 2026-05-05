@@ -60,26 +60,50 @@ class SneakyNamegenerator : JavaPlugin() {
                 saveResource("config.yml", false)
             }
 
-            val elvenDir = dataFolder.resolve("generators/elven")
-            if (!elvenDir.exists()) {
-                elvenDir.mkdirs()
-                saveResource("generators/elven/components.yml", false)
-                saveResource("generators/elven/templates.yml", false)
-            }
-
-            val dwarvenDir = dataFolder.resolve("generators/dwarven")
-            if (!dwarvenDir.exists()) {
-                dwarvenDir.mkdirs()
-                saveResource("generators/dwarven/components.yml", false)
-                saveResource("generators/dwarven/templates.yml", false)
-            }
-
-            val wildborneDir = dataFolder.resolve("generators/wildborne")
-            if (!wildborneDir.exists()) {
-                wildborneDir.mkdirs()
-                saveResource("generators/wildborne/components.yml", false)
-                saveResource("generators/wildborne/templates.yml", false)
-            }
+            ensureGeneratorPack(
+                "elven",
+                listOf("components.yml", "templates.yml")
+            )
+            ensureGeneratorPack(
+                "dwarven",
+                listOf("components.yml", "templates.yml")
+            )
+            ensureGeneratorPack(
+                "wildborne",
+                listOf("components.yml", "templates.yml")
+            )
+            ensureGeneratorPack(
+                "fae",
+                listOf("components.yml", "templates.yml")
+            )
+            ensureGeneratorPack(
+                "goblin",
+                listOf("components.yml", "templates.yml")
+            )
+            ensureGeneratorPack(
+                "kobold",
+                listOf("components.yml", "templates.yml")
+            )
+            ensureGeneratorPack(
+                "giant",
+                listOf("components.yml", "templates.yml")
+            )
+            ensureGeneratorPack(
+                "gnome",
+                listOf("components.yml", "templates.yml")
+            )
+            ensureGeneratorPack(
+                "halfling",
+                listOf("components.yml", "templates.yml")
+            )
+            ensureGeneratorPack(
+                "viking",
+                listOf("components.yml", "templates.yml")
+            )
+            ensureGeneratorPack(
+                "believer",
+                listOf("templates.yml")
+            )
             
             // Load all yml files recursively
             loader.loadFromDirectory(dataFolder, newRegistry)
@@ -90,6 +114,18 @@ class SneakyNamegenerator : JavaPlugin() {
         } catch (e: Exception) {
             logger.severe("Failed to load name generator configuration: ${e.message}")
             e.printStackTrace()
+        }
+    }
+
+    private fun ensureGeneratorPack(packName: String, files: List<String>) {
+        val packDir = dataFolder.resolve("generators/$packName")
+        if (!packDir.exists()) packDir.mkdirs()
+
+        for (file in files) {
+            val target = packDir.resolve(file)
+            if (!target.exists()) {
+                saveResource("generators/$packName/$file", false)
+            }
         }
     }
     

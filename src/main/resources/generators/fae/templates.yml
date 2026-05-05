@@ -1,0 +1,24 @@
+templates:
+  fae_syllable:
+    hidden: true
+    variants:
+      - "%fae_onset%%fae_nucleus%%fae_coda%"
+
+  fae_firstname:
+    hidden: true
+    variants:
+      - "%fae_syllable%%fae_syllable%": 70
+      - "%fae_syllable%%fae_syllable%%fae_syllable%": 30
+    cleanup: "(.)\\1{2,}"
+
+  fae_lastname:
+    hidden: true
+    variants:
+      - "%fae_epithet%%fae_epithet%": 35
+      - "%fae_syllable%%fae_syllable%": 65
+    cleanup: "(.)\\1{2,}"
+
+  fae:
+    pattern: "%fae_firstname% %fae_lastname%"
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"

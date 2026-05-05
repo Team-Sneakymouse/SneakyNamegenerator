@@ -1,0 +1,68 @@
+lists:
+  gnome_onset:
+    - "sp": 8
+    - "st": 7
+    - "str": 6
+    - "sk": 6
+    - "f": 6
+    - "fl": 5
+    - "t": 5
+    - "tr": 5
+    - "br": 4
+    - "gl": 4
+    - "": 3
+
+  gnome_vowel:
+    - "a": 7
+    - "e": 9
+    - "i": 8
+    - "o": 7
+    - "u": 5
+    - "ee": 5
+    - "oo": 3
+
+  gnome_coda:
+    - "k": 6
+    - "p": 6
+    - "f": 6
+    - "s": 6
+    - "t": 5
+    - "n": 5
+    - "m": 4
+    - "": 10
+
+  gnome_suffix_masc:
+    # Reserved suffix-set for gnomes only
+    - "os": 4
+    - "is": 4
+    - "as": 3
+    - "": 14
+
+  gnome_suffix_femme:
+    - "a": 6
+    - "i": 5
+    - "": 16
+
+  gnome_verb:
+    - "Spark": 10
+    - "Strike": 8
+    - "Shine": 7
+    - "Quick": 7
+    - "Bright": 6
+    - "Whistle": 6
+    - "Tinker": 6
+    - "Glimmer": 5
+    - "Snap": 5
+    - "Sprocket": 4
+
+  gnome_noun:
+    - "cup": 9
+    - "fuse": 8
+    - "cog": 8
+    - "wrench": 7
+    - "spark": 6
+    - "kettle": 6
+    - "gear": 6
+    - "button": 5
+    - "whistle": 5
+    - "pocket": 4

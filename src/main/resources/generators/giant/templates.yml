@@ -1,0 +1,26 @@
+templates:
+  giant_firstname_masc:
+    hidden: true
+    variants:
+      - "%giant_root%%giant_suffix_masc%"
+
+  giant_firstname_femme:
+    hidden: true
+    variants:
+      - "%giant_root%%giant_suffix_femme%"
+
+  giant_lastname:
+    hidden: true
+    variants:
+      - "%giant_epithet%": 70
+      - "The %giant_epithet%": 30
+
+  giant_masc:
+    pattern: "%giant_firstname_masc% %giant_lastname%"
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"
+
+  giant_femme:
+    pattern: "%giant_firstname_femme% %giant_lastname%"
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"

@@ -1,6 +1,7 @@
 package com.sneakynamegenerator.generator
 
 import java.util.Random
+import java.util.regex.Pattern
 
 class WeightedList<T>(private val items: List<WeightedItem<T>>) {
     private val totalWeight: Double = items.sumOf { it.weight }
@@ -39,11 +40,11 @@ class GeneratorRegistry {
         templates[name] = template
     }
 
-    fun resolve(token: String): String? {
+    private fun resolve(token: String, ctx: MutableMap<String, String>): String? {
         val cleanToken = token.removeSurrounding("%")
         
         // Try templates first
-        templates[cleanToken]?.let { return expand(it) }
+        templates[cleanToken]?.let { return expand(it, ctx) }
         
         // Then lists
         lists[cleanToken]?.let { return it.pick() }
@@ -51,22 +52,77 @@ class GeneratorRegistry {
         return null
     }
 
-    private fun expand(template: NameTemplate): String {
+    private fun expand(template: NameTemplate, ctx: MutableMap<String, String>): String {
         val raw = template.variants.pick()
-        return expandString(raw)
+        var expanded = expandString(raw, ctx)
+
+        template.cleanupPattern?.let { pattern ->
+            expanded = expanded.replace(pattern.toRegex(), "")
+        }
+
+        template.capitalizationPattern?.let { capPattern ->
+            expanded = applyCapitalization(expanded, capPattern)
+        }
+
+        return expanded
     }
 
-    fun expandString(input: String): String {
+    fun expandString(input: String, ctx: MutableMap<String, String> = mutableMapOf()): String {
         val regex = "%([^%]+)%".toRegex()
         var result = input
         
         // Resolve nested tokens
         while (regex.containsMatchIn(result)) {
             result = regex.replace(result) { match ->
-                resolve(match.groupValues[1]) ?: match.value
+                val tokenBody = match.groupValues[1]
+                if (tokenBody.startsWith("=")) {
+                    val expr = tokenBody.drop(1)
+                    val colonIdx = expr.indexOf(':')
+                    if (colonIdx >= 0) {
+                        // Bind: %=var:token%
+                        val varName = expr.substring(0, colonIdx).trim()
+                        val innerToken = expr.substring(colonIdx + 1).trim()
+                        if (varName.isEmpty() || innerToken.isEmpty()) {
+                            match.value
+                        } else {
+                            val resolved = resolve(innerToken, ctx)
+                            if (resolved != null) {
+                                ctx[varName] = resolved
+                                resolved
+                            } else {
+                                match.value
+                            }
+                        }
+                    } else {
+                        // Reuse: %=var%
+                        val varName = expr.trim()
+                        ctx[varName] ?: match.value
+                    }
+                } else {
+                    resolve(tokenBody, ctx) ?: match.value
+                }
             }
         }
         
         return result
+    }
+
+    private fun applyCapitalization(name: String, patternString: String): String {
+        return try {
+            val pattern = Pattern.compile(patternString)
+            val matcher = pattern.matcher(name)
+            val sb = StringBuilder(name)
+            while (matcher.find()) {
+                val start = matcher.start()
+                val end = matcher.end()
+                if (start < name.length) {
+                    val charToReplace = name.substring(start, end)
+                    sb.replace(start, end, charToReplace.uppercase())
+                }
+            }
+            sb.toString()
+        } catch (_: Exception) {
+            name
+        }
     }
 }

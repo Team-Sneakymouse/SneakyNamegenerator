@@ -1,0 +1,26 @@
+templates:
+  believer_masc:
+    variants:
+      - "%dwarf_masc%": 1
+      - "%elf%": 1
+      - "%goblin_masc%": 1
+      - "%kobold_masc%": 1
+      - "%wildborne_masc%": 1
+      - "%fae%": 1
+      - "%giant_masc%": 1
+      - "%gnome_masc%": 1
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"
+
+  believer_femme:
+    variants:
+      - "%dwarf_femme%": 1
+      - "%elf%": 1
+      - "%goblin_femme%": 1
+      - "%kobold_femme%": 1
+      - "%wildborne_femme%": 1
+      - "%fae%": 1
+      - "%giant_femme%": 1
+      - "%gnome_femme%": 1
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"

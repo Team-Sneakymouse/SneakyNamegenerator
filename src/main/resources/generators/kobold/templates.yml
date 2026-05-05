@@ -1,0 +1,39 @@
+templates:
+  kobold_syllable:
+    hidden: true
+    variants:
+      - "%kobold_onset%%kobold_vowel%%kobold_coda%"
+
+  kobold_firstname_masc:
+    hidden: true
+    variants:
+      - "%kobold_syllable%%kobold_suffix_masc%": 70
+      - "%kobold_syllable%%kobold_syllable%%kobold_suffix_masc%": 30
+    cleanup: "(.)\\1{2,}"
+
+  kobold_firstname_femme:
+    hidden: true
+    variants:
+      - "%kobold_syllable%%kobold_suffix_femme%": 70
+      - "%kobold_syllable%%kobold_syllable%%kobold_suffix_femme%": 30
+    cleanup: "(.)\\1{2,}"
+
+  kobold_lastname:
+    hidden: true
+    variants:
+      - "%kobold_epithet%": 60
+      - "%kobold_syllable%%kobold_syllable%": 40
+
+  kobold_masc:
+    variants:
+      - "%kobold_firstname_masc% %kobold_lastname%": 85
+      - "%dwarf_masc%": 15
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"
+
+  kobold_femme:
+    variants:
+      - "%kobold_firstname_femme% %kobold_lastname%": 85
+      - "%dwarf_femme%": 15
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"

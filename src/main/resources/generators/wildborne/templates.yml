@@ -24,14 +24,26 @@ templates:
       - "%wildborne_syllable_femme%%wildborne_syllable_femme%": 40
     cleanup: "(.)\\1+|(sh|zh|z|s){2,}"
 
-  # Modern Names
+  wildborne_lastname_modern:
+    hidden: true
+    variants:
+      - "%wildborne_adj%%wildborne_noun%"
+
+  wildborne_lastname_traditional:
+    hidden: true
+    variants:
+      - "%wildborne_title_adj% %wildborne_noun%"
+
+  # Modern Names (hidden variants)
   wildborne_masc_modern:
-    pattern: "%wildborne_firstname_masc% %wildborne_adj%%wildborne_noun%"
+    hidden: true
+    pattern: "%wildborne_firstname_masc% %wildborne_lastname_modern%"
     capitalization: "(?<=^|\\s)."
     cleanup: "'+(?=\\s|$)"
 
   wildborne_femme_modern:
-    pattern: "%wildborne_firstname_femme% %wildborne_adj%%wildborne_noun%"
+    hidden: true
+    pattern: "%wildborne_firstname_femme% %wildborne_lastname_modern%"
     capitalization: "(?<=^|\\s)."
     cleanup: "'+(?=\\s|$)"
 
@@ -41,22 +53,27 @@ templates:
     variants: ["The %wildborne_adj%"]
 
   wildborne_masc_traditional:
-    pattern: "%wildborne_firstname_masc% %wildborne_title_adj% %wildborne_noun%"
+    hidden: true
+    pattern: "%wildborne_firstname_masc% %wildborne_lastname_traditional%"
     capitalization: "(?<=^|\\s)."
     cleanup: "'+(?=\\s|$)"
 
   wildborne_femme_traditional:
-    pattern: "%wildborne_firstname_femme% %wildborne_title_adj% %wildborne_noun%"
+    hidden: true
+    pattern: "%wildborne_firstname_femme% %wildborne_lastname_traditional%"
     capitalization: "(?<=^|\\s)."
     cleanup: "'+(?=\\s|$)"
 
-  # Aliases
-  wildborne_modern:
+  wildborne_masc:
     variants:
-      - "%wildborne_masc_modern%": 50
-      - "%wildborne_femme_modern%": 50
+      - "%wildborne_masc_modern%": 60
+      - "%wildborne_masc_traditional%": 40
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"
 
-  wildborne_traditional:
+  wildborne_femme:
     variants:
-      - "%wildborne_masc_traditional%": 50
-      - "%wildborne_femme_traditional%": 50
+      - "%wildborne_femme_modern%": 60
+      - "%wildborne_femme_traditional%": 40
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"

@@ -1,0 +1,35 @@
+templates:
+  goblin_syllable:
+    hidden: true
+    variants:
+      - "%goblin_onset%%goblin_nucleus%%goblin_coda%"
+
+  goblin_firstname_masc:
+    hidden: true
+    variants:
+      - "%goblin_syllable%%goblin_suffix_masc%": 70
+      - "%goblin_syllable%%goblin_syllable%%goblin_suffix_masc%": 30
+    cleanup: "([^aeiou])\\1+"
+
+  goblin_firstname_femme:
+    hidden: true
+    variants:
+      - "%goblin_syllable%%goblin_suffix_femme%": 70
+      - "%goblin_syllable%%goblin_syllable%%goblin_suffix_femme%": 30
+    cleanup: "([^aeiou])\\1+"
+
+  goblin_lastname:
+    hidden: true
+    variants:
+      - "%goblin_verb%%goblin_noun%": 80
+      - "%goblin_noun%%goblin_noun%": 20
+
+  goblin_masc:
+    pattern: "%goblin_firstname_masc% %goblin_lastname%"
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"
+
+  goblin_femme:
+    pattern: "%goblin_firstname_femme% %goblin_lastname%"
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"

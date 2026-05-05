@@ -1,0 +1,46 @@
+templates:
+  halfling_syllable:
+    hidden: true
+    variants:
+      - "%halfling_onset%%halfling_vowel%%halfling_coda%"
+
+  halfling_firstname_bound:
+    hidden: true
+    variants:
+      - "%=onset%%halfling_vowel%%halfling_coda%%halfling_ending_first%"
+
+  halfling_lastname_bound:
+    hidden: true
+    variants:
+      - "%=onset%%halfling_food%%halfling_ending_last%": 70
+      - "%=onset%%halfling_syllable%%halfling_ending_last%": 30
+
+  halfling_firstname_free:
+    hidden: true
+    variants:
+      - "%halfling_syllable%%halfling_ending_first%": 70
+      - "%halfling_syllable%%halfling_syllable%%halfling_ending_first%": 30
+
+  halfling_lastname_free:
+    hidden: true
+    variants:
+      - "%halfling_food%%halfling_ending_last%": 60
+      - "%halfling_syllable%%halfling_ending_last%": 40
+
+  halfling_fullname_bound:
+    hidden: true
+    pattern: "%=onset:halfling_onset%~%halfling_firstname_bound% %halfling_lastname_bound%"
+    cleanup: "^[^~]*~|([^aeiou])\\1+"
+
+  halfling_fullname_free:
+    hidden: true
+    pattern: "%halfling_firstname_free% %halfling_lastname_free%"
+    cleanup: "([^aeiou])\\1+"
+
+  halfling:
+    hidden: true
+    variants:
+      - "%halfling_fullname_bound%": 50
+      - "%halfling_fullname_free%": 50
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"

@@ -212,3 +212,14 @@ lists:
     - "da": 6
     - "ma": 6
     - "na": 6
+
+  dwarven_town:
+    - "Holesteadt": 6
+    - "Vengerburg": 6
+    - "Stonehollow": 5
+    - "Ironspine": 5
+    - "Deepdelve": 5
+    - "Copperhall": 4
+    - "Anvilgate": 4
+    - "Frostbarrow": 3
+    - "Grimridge": 3

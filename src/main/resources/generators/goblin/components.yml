@@ -1,0 +1,70 @@
+lists:
+  goblin_onset:
+    - "g": 10
+    - "gr": 8
+    - "kr": 6
+    - "br": 6
+    - "z": 8
+    - "sk": 7
+    - "sn": 6
+    - "tr": 5
+    - "r": 4
+    - "": 3
+
+  goblin_nucleus:
+    - "a": 9
+    - "o": 10
+    - "u": 8
+    - "i": 7
+    - "e": 6
+    - "oo": 4
+    - "aa": 3
+
+  goblin_coda:
+    - "g": 10
+    - "k": 9
+    - "z": 8
+    - "sh": 6
+    - "n": 6
+    - "m": 5
+    - "r": 5
+    - "t": 4
+    - "": 6
+
+  goblin_suffix_masc:
+    # Reserved suffix-set for goblins only
+    - "ov": 6
+    - "ev": 5
+    - "ski": 4
+    - "": 12
+
+  goblin_suffix_femme:
+    - "ova": 6
+    - "eva": 5
+    - "ska": 4
+    - "a": 6
+    - "": 10
+
+  goblin_verb:
+    - "Spark": 8
+    - "Snip": 7
+    - "Scam": 7
+    - "Grease": 6
+    - "Sly": 6
+    - "Grip": 6
+    - "Jinx": 5
+    - "Skulk": 5
+    - "Swindle": 4
+    - "Grin": 4
+
+  goblin_noun:
+    - "wrench": 8
+    - "cog": 8
+    - "pouch": 7
+    - "dagger": 6
+    - "fuse": 6
+    - "cup": 5
+    - "bolt": 5
+    - "coin": 5
+    - "boot": 4
+    - "spark": 4

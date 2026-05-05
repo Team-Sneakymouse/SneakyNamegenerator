@@ -1,0 +1,35 @@
+templates:
+  gnome_syllable:
+    hidden: true
+    variants:
+      - "%gnome_onset%%gnome_vowel%%gnome_coda%"
+
+  gnome_firstname_masc:
+    hidden: true
+    variants:
+      - "%gnome_syllable%%gnome_syllable%%gnome_suffix_masc%": 70
+      - "%gnome_syllable%%gnome_suffix_masc%": 30
+    cleanup: "([^aeiou])\\1+"
+
+  gnome_firstname_femme:
+    hidden: true
+    variants:
+      - "%gnome_syllable%%gnome_syllable%%gnome_suffix_femme%": 70
+      - "%gnome_syllable%%gnome_suffix_femme%": 30
+    cleanup: "([^aeiou])\\1+"
+
+  gnome_lastname:
+    hidden: true
+    variants:
+      - "%gnome_verb%%gnome_noun%": 85
+      - "%halfling_lastname%": 15
+
+  gnome_masc:
+    pattern: "%gnome_firstname_masc% %gnome_lastname%"
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"
+
+  gnome_femme:
+    pattern: "%gnome_firstname_femme% %gnome_lastname%"
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"

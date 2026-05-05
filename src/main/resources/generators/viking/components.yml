@@ -1,0 +1,38 @@
+lists:
+  viking_first:
+    - "Erik": 7
+    - "Leif": 7
+    - "Ivar": 6
+    - "Bjorn": 6
+    - "Ragnar": 5
+    - "Harald": 5
+    - "Hakon": 4
+    - "Sigrid": 5
+    - "Astrid": 5
+    - "Freya": 5
+    - "Helga": 4
+    - "Inga": 4
+
+  viking_patron_masc:
+    - "son": 12
+    - "sson": 6
+
+  viking_patron_femme:
+    - "dottir": 10
+    - "sdottir": 6
+
+  viking_root:
+    - "Thor": 8
+    - "Ulf": 7
+    - "Einar": 6
+    - "Sten": 6
+    - "Hild": 5
+    - "Gud": 4
+
+  viking_place:
+    - "Fjord": 7
+    - "Havn": 6
+    - "Skeld": 5
+    - "Holm": 5
+    - "Berg": 5
+    - "Vik": 5

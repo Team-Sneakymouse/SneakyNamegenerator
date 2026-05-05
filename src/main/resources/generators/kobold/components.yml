@@ -1,0 +1,52 @@
+lists:
+  kobold_onset:
+    - "k": 10
+    - "ko": 7
+    - "ka": 7
+    - "t": 7
+    - "ta": 6
+    - "n": 6
+    - "m": 5
+    - "sh": 6
+    - "ch": 5
+    - "h": 4
+    - "": 4
+
+  kobold_vowel:
+    - "a": 9
+    - "i": 8
+    - "u": 8
+    - "e": 7
+    - "o": 9
+    - "ya": 4
+    - "yu": 3
+    - "yo": 3
+
+  kobold_coda:
+    - "": 18
+    - "n": 8
+    - "m": 4
+    - "k": 3
+    - "t": 3
+    - "s": 2
+
+  kobold_suffix_masc:
+    # Reserved suffix-set for kobolds only
+    - "o": 8
+    - "shi": 4
+    - "": 14
+
+  kobold_suffix_femme:
+    - "ko": 5
+    - "a": 5
+    - "": 18
+
+  kobold_epithet:
+    - "Inu": 8
+    - "Kitsune": 4
+    - "Tama": 7
+    - "Mori": 6
+    - "Sora": 6
+    - "Hana": 6
+    - "Kawa": 5
+    - "Shiba": 5

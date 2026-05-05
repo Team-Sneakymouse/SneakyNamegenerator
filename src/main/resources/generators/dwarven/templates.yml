@@ -24,35 +24,84 @@ templates:
       - "%dwarven_syllable_strong%%dwarven_syllable_weak%%dwarven_ending_femme%": 40
     cleanup: "'+(?=\\s|$)|([^aeiou])\\1+"
 
-  # Modern (Clan) Names
+  dwarven_lastname_modern_masc:
+    hidden: true
+    variants:
+      - "%dwarven_adj%%dwarven_noun_masc%"
+
+  dwarven_lastname_modern_femme:
+    hidden: true
+    variants:
+      - "%dwarven_adj%%dwarven_noun_femme%"
+
+  dwarven_lastname_traditional_masc:
+    hidden: true
+    variants:
+      - "%dwarven_firstname_masc%son"
+
+  dwarven_lastname_traditional_femme:
+    hidden: true
+    variants:
+      - "%dwarven_firstname_masc%dottir"
+
+  dwarven_lastname_town:
+    hidden: true
+    variants:
+      - "of %dwarven_town%"
+
+  # Hidden variants (used by dwarf_masc/dwarf_femme)
   dwarven_masc_modern:
-    pattern: "%dwarven_firstname_masc% %dwarven_adj%%dwarven_noun_masc%"
+    hidden: true
+    pattern: "%dwarven_firstname_masc% %dwarven_lastname_modern_masc%"
     capitalization: "(?<=^|\\s)."
     cleanup: "'+(?=\\s|$)"
 
   dwarven_femme_modern:
-    pattern: "%dwarven_firstname_femme% %dwarven_adj%%dwarven_noun_femme%"
+    hidden: true
+    pattern: "%dwarven_firstname_femme% %dwarven_lastname_modern_femme%"
     capitalization: "(?<=^|\\s)."
     cleanup: "'+(?=\\s|$)"
 
-  # Traditional (Patronymic) Names
   dwarven_masc_traditional:
-    pattern: "%dwarven_firstname_masc% %dwarven_firstname_masc%son"
+    hidden: true
+    pattern: "%dwarven_firstname_masc% %dwarven_lastname_traditional_masc%"
     capitalization: "(?<=^|\\s)."
     cleanup: "'+(?=\\s|$)"
 
   dwarven_femme_traditional:
-    pattern: "%dwarven_firstname_femme% %dwarven_firstname_masc%dottir"
+    hidden: true
+    pattern: "%dwarven_firstname_femme% %dwarven_lastname_traditional_femme%"
     capitalization: "(?<=^|\\s)."
     cleanup: "'+(?=\\s|$)"
 
-  # Aliases for convenience
-  dwarven_modern:
-    variants:
-      - "%dwarven_masc_modern%": 50
-      - "%dwarven_femme_modern%": 50
+  dwarven_masc_town:
+    hidden: true
+    pattern: "%dwarven_firstname_masc% %dwarven_lastname_town%"
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"
 
-  dwarven_traditional:
+  dwarven_femme_town:
+    hidden: true
+    pattern: "%dwarven_firstname_femme% %dwarven_lastname_town%"
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"
+
+  dwarf_masc:
     variants:
-      - "%dwarven_masc_traditional%": 50
-      - "%dwarven_femme_traditional%": 50
+      - "%dwarven_masc_modern%": 40
+      - "%dwarven_masc_traditional%": 25
+      - "%viking_masc%": 15
+      - "%dwarven_masc_town%": 10
+      - "%halfling%": 10
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"
+
+  dwarf_femme:
+    variants:
+      - "%dwarven_femme_modern%": 40
+      - "%dwarven_femme_traditional%": 25
+      - "%viking_femme%": 15
+      - "%dwarven_femme_town%": 10
+      - "%halfling%": 10
+    capitalization: "(?<=^|\\s)."
+    cleanup: "'+(?=\\s|$)"

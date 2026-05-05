@@ -1,0 +1,34 @@
+lists:
+  giant_root:
+    - "Grog": 8
+    - "Kront": 7
+    - "Oof": 6
+    - "Brug": 6
+    - "Dorf": 5
+    - "Thonk": 5
+    - "Mog": 5
+    - "Ruk": 5
+    - "Grum": 4
+    - "Borf": 4
+    - "Ugg": 4
+
+  giant_suffix_masc:
+    # Reserved suffix-set for giants only
+    - "us": 5
+    - "": 15
+
+  giant_suffix_femme:
+    - "a": 6
+    - "": 14
+
+  giant_epithet:
+    - "Skull": 7
+    - "Rock": 7
+    - "Stomp": 6
+    - "Boulder": 6
+    - "Club": 5
+    - "Gravel": 5
+    - "Hill": 4
+    - "Big": 4
+    - "Loud": 4
+    - "Crush": 4

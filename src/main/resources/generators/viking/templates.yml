@@ -1,0 +1,34 @@
+templates:
+  viking_firstname_masc:
+    hidden: true
+    variants:
+      - "%viking_first%": 60
+      - "%viking_root%%viking_first%": 40
+
+  viking_firstname_femme:
+    hidden: true
+    variants:
+      - "%viking_first%": 65
+      - "%viking_root%%viking_first%": 35
+
+  viking_lastname_masc:
+    hidden: true
+    variants:
+      - "%viking_root%%viking_patron_masc%": 55
+      - "%viking_place%": 45
+
+  viking_lastname_femme:
+    hidden: true
+    variants:
+      - "%viking_root%%viking_patron_femme%": 55
+      - "%viking_place%": 45
+
+  viking_masc:
+    hidden: true
+    pattern: "%viking_firstname_masc% %viking_lastname_masc%"
+    capitalization: "(?<=^|\\s)."
+
+  viking_femme:
+    hidden: true
+    pattern: "%viking_firstname_femme% %viking_lastname_femme%"
+    capitalization: "(?<=^|\\s)."

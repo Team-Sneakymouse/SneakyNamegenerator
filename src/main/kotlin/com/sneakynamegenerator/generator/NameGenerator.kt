@@ -11,9 +11,10 @@ class NameGenerator(val registry: GeneratorRegistry) {
         val template = registry.templates[type.lowercase()]
             ?: throw IllegalArgumentException("Unknown name type: $type")
 
+        val ctx = mutableMapOf<String, String>()
         val maxAttempts = 10
         for (attempt in 1..maxAttempts) {
-            var name = registry.expandString(template.variants.pick())
+            var name = registry.expandString(template.variants.pick(), ctx)
             
             // Apply cleanup
             template.cleanupPattern?.let { pattern ->
