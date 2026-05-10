@@ -14,7 +14,7 @@ templates:
     variants:
       - "%wildborne_syllable_masc%%wildborne_syllable_masc%": 65
       - "%wildborne_syllable_masc%": 35
-    cleanup: "(.)\\1+|(sh|zh|z|s){2,}" # Collapse doubles and sibilant clusters
+    cleanup: "(.)\\1+|(sh|zh|z|s){2,}"
 
   # First Names: Femme
   wildborne_firstname_femme:
@@ -38,42 +38,42 @@ templates:
   wildborne_masc_modern:
     hidden: true
     pattern: "%wildborne_firstname_masc% %wildborne_lastname_modern%"
-    capitalization: "(?<=^|\\s)."
+    capitalization: "(?<=^|\\s)(?![Tt]he\\b)."
     cleanup: "'+(?=\\s|$)"
 
   wildborne_femme_modern:
     hidden: true
     pattern: "%wildborne_firstname_femme% %wildborne_lastname_modern%"
-    capitalization: "(?<=^|\\s)."
+    capitalization: "(?<=^|\\s)(?![Tt]he\\b)."
     cleanup: "'+(?=\\s|$)"
 
   # Traditional Names (Titles)
   wildborne_title_adj:
     hidden: true
-    variants: ["The %wildborne_adj%"]
+    variants: ["the %wildborne_adj%"]
 
   wildborne_masc_traditional:
     hidden: true
     pattern: "%wildborne_firstname_masc% %wildborne_lastname_traditional%"
-    capitalization: "(?<=^|\\s)."
+    capitalization: "(?<=^|\\s)(?![Tt]he\\b)."
     cleanup: "'+(?=\\s|$)"
 
   wildborne_femme_traditional:
     hidden: true
     pattern: "%wildborne_firstname_femme% %wildborne_lastname_traditional%"
-    capitalization: "(?<=^|\\s)."
+    capitalization: "(?<=^|\\s)(?![Tt]he\\b)."
     cleanup: "'+(?=\\s|$)"
 
   wildborne_masc:
     variants:
       - "%wildborne_masc_modern%": 60
       - "%wildborne_masc_traditional%": 40
-    capitalization: "(?<=^|\\s)."
+    capitalization: "(?<=^|\\s)(?![Tt]he\\b)."
     cleanup: "'+(?=\\s|$)"
 
   wildborne_femme:
     variants:
       - "%wildborne_femme_modern%": 60
       - "%wildborne_femme_traditional%": 40
-    capitalization: "(?<=^|\\s)."
+    capitalization: "(?<=^|\\s)(?![Tt]he\\b)."
     cleanup: "'+(?=\\s|$)"

@@ -7,14 +7,14 @@ templates:
   fae_firstname:
     hidden: true
     variants:
-      - "%fae_syllable%%fae_syllable%": 70
-      - "%fae_syllable%%fae_syllable%%fae_syllable%": 30
+      - "%fae_syllable%%fae_syllable%": 82
+      - "%fae_syllable%%fae_syllable%%fae_syllable%": 18
     cleanup: "(.)\\1{2,}"
 
   fae_lastname:
     hidden: true
     variants:
-      - "%fae_epithet%%fae_epithet%": 15
+      - "%fae_epithet% %fae_epithet%": 15
       - "%fae_epithet%": 25
       - "%fae_syllable%%fae_syllable%": 60
     cleanup: "(.)\\1{2,}"
@@ -23,3 +23,4 @@ templates:
     pattern: "%fae_firstname% %fae_lastname%"
     capitalization: "(?<=^|\\s)."
     cleanup: "'+(?=\\s|$)"
+    maxLength: 22

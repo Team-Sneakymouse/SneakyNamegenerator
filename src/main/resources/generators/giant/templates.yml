@@ -1,26 +1,36 @@
 templates:
+  giant_syllable:
+    hidden: true
+    variants:
+      - "%giant_onset%%giant_vowel%%giant_coda%"
+
   giant_firstname_masc:
     hidden: true
     variants:
-      - "%giant_root%%giant_suffix_masc%"
+      - "%giant_root_masc%%giant_suffix_masc%": 50
+      - "%giant_syllable%%giant_syllable%": 35
+      - "%giant_syllable%": 15
 
   giant_firstname_femme:
     hidden: true
     variants:
-      - "%giant_root%%giant_suffix_femme%"
+      - "%giant_root_femme%%giant_suffix_femme%": 55
+      - "%giant_syllable%%giant_syllable%%giant_suffix_femme%": 25
+      - "%giant_syllable%%giant_suffix_femme%": 20
 
   giant_lastname:
     hidden: true
     variants:
-      - "%giant_epithet%": 70
-      - "The %giant_epithet%": 30
+      - "%giant_epithet%": 35
+      - "the %giant_epithet%": 15
+      - "%giant_epithet_first%%giant_epithet_second%": 50
 
   giant_masc:
     pattern: "%giant_firstname_masc% %giant_lastname%"
-    capitalization: "(?<=^|\\s)."
+    capitalization: "(?<=^|\\s)(?![Tt]he\\b)."
     cleanup: "'+(?=\\s|$)"
 
   giant_femme:
     pattern: "%giant_firstname_femme% %giant_lastname%"
-    capitalization: "(?<=^|\\s)."
+    capitalization: "(?<=^|\\s)(?![Tt]he\\b)."
     cleanup: "'+(?=\\s|$)"

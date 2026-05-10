@@ -3,13 +3,13 @@ templates:
     hidden: true
     variants:
       - "%viking_first_masc%": 60
-      - "%viking_root%%viking_first_masc%": 40
+      - "%viking_root% %viking_first_masc%": 40
 
   viking_firstname_femme:
     hidden: true
     variants:
       - "%viking_first_femme%": 65
-      - "%viking_root%%viking_first_femme%": 35
+      - "%viking_root% %viking_first_femme%": 35
 
   viking_lastname_masc:
     hidden: true

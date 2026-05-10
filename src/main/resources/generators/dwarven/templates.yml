@@ -34,15 +34,18 @@ templates:
     variants:
       - "%dwarven_adj%%dwarven_noun_femme%"
 
+  # Patronym-style son/dottir is reserved for the separate viking variant, not dwarf core.
   dwarven_lastname_traditional_masc:
     hidden: true
     variants:
-      - "%dwarven_firstname_masc%son"
+      - "%dwarven_noun_masc%%dwarven_noun_masc%": 70
+      - "%dwarven_adj%%dwarven_noun_masc%": 30
 
   dwarven_lastname_traditional_femme:
     hidden: true
     variants:
-      - "%dwarven_firstname_masc%dottir"
+      - "%dwarven_noun_femme%%dwarven_noun_femme%": 70
+      - "%dwarven_adj%%dwarven_noun_femme%": 30
 
   dwarven_lastname_town:
     hidden: true
@@ -104,18 +107,32 @@ templates:
     capitalization: "(?<=^|\\s)(?!of\\b)."
     cleanup: "'+(?=\\s|$)"
 
+  dwarf_masc_kobold_blend:
+    hidden: true
+    pattern: "%kobold_firstname_masc% %dwarven_lastname_modern_masc%"
+    capitalization: "(?<=^|\\s)(?!of\\b)."
+    cleanup: "'+(?=\\s|$)"
+
+  dwarf_femme_kobold_blend:
+    hidden: true
+    pattern: "%kobold_firstname_femme% %dwarven_lastname_modern_femme%"
+    capitalization: "(?<=^|\\s)(?!of\\b)."
+    cleanup: "'+(?=\\s|$)"
+
   dwarf_masc:
     variants:
-      - "%dwarf_masc_core%": 70
-      - "%viking_masc%": 15
-      - "%halfling%": 15
+      - "%dwarf_masc_core%": 58
+      - "%viking_masc%": 12
+      - "%halfling%": 10
+      - "%dwarf_masc_kobold_blend%": 15
     capitalization: "(?<=^|\\s)(?!of\\b)."
     cleanup: "'+(?=\\s|$)"
 
   dwarf_femme:
     variants:
-      - "%dwarf_femme_core%": 70
-      - "%viking_femme%": 15
-      - "%halfling%": 15
+      - "%dwarf_femme_core%": 58
+      - "%viking_femme%": 12
+      - "%halfling%": 10
+      - "%dwarf_femme_kobold_blend%": 15
     capitalization: "(?<=^|\\s)(?!of\\b)."
     cleanup: "'+(?=\\s|$)"

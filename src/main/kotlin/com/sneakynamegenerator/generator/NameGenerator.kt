@@ -22,7 +22,7 @@ class NameGenerator(val registry: GeneratorRegistry) {
         val template = registry.templates[type.lowercase()]
             ?: throw IllegalArgumentException("Unknown name type: $type")
 
-        val maxAttempts = 10
+        val maxAttempts = 40
         for (attempt in 1..maxAttempts) {
             val ctx = mutableMapOf<String, String>()
             val picked = template.variants.pick()
@@ -31,6 +31,10 @@ class NameGenerator(val registry: GeneratorRegistry) {
             // Apply cleanup
             template.cleanupPattern?.let { pattern ->
                 name = name.replace(pattern.toRegex(), "")
+            }
+
+            if (type.lowercase().startsWith("wildborne")) {
+                name = softenLongConsonantRuns(name, maxConsonants = 3)
             }
             
             name = applyCapitalization(name, template.capitalizationPattern ?: "(?<=^|\\s).")
@@ -45,7 +49,34 @@ class NameGenerator(val registry: GeneratorRegistry) {
             }
         }
         
-        throw IllegalStateException("Failed to generate a name within max length of ${template.maxLength} for template '$type' after 10 attempts.")
+        throw IllegalStateException("Failed to generate a name within max length of ${template.maxLength} for template '$type' after $maxAttempts attempts.")
+    }
+
+    /**
+     * Trims runs of consonants longer than [maxConsonants] (helps wildborne syllable mashups).
+     */
+    private fun softenLongConsonantRuns(name: String, maxConsonants: Int): String {
+        if (maxConsonants < 1) return name
+        val vowels = setOf('a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y')
+        val sb = StringBuilder()
+        var run = 0
+        for (ch in name) {
+            when {
+                ch == ' ' || ch == '\'' || !ch.isLetter() -> {
+                    run = 0
+                    sb.append(ch)
+                }
+                ch in vowels -> {
+                    run = 0
+                    sb.append(ch)
+                }
+                else -> {
+                    run++
+                    if (run <= maxConsonants) sb.append(ch) else run = maxConsonants
+                }
+            }
+        }
+        return sb.toString()
     }
 
     private fun applyCapitalization(name: String, patternString: String): String {

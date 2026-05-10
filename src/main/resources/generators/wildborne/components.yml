@@ -62,11 +62,10 @@ lists:
   # Feminine Codas: Hissing/Flowing
   wildborne_coda_femme:
     - "z": 15
-    - "sh": 12
+    - "sh": 20
     - "th": 12
     - "n": 10
     - "ng": 10
-    - "sh": 8
     - "m": 8
     - "v": 6
 

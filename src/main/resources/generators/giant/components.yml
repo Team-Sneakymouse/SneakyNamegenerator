@@ -1,5 +1,5 @@
 lists:
-  giant_root:
+  giant_root_masc:
     - "Grog": 8
     - "Kront": 7
     - "Oof": 6
@@ -12,23 +12,155 @@ lists:
     - "Borf": 4
     - "Ugg": 4
 
+  giant_root_femme:
+    - "Oofa": 6
+    - "Kronta": 5
+    - "Bruga": 5
+    - "Mogna": 5
+    - "Thonka": 5
+    - "Ruka": 5
+    - "Gruma": 4
+    - "Moga": 4
+    - "Ugga": 4
+    - "Dorfa": 4
+    - "Brola": 4
+    - "Trina": 3
+    - "Kola": 3
+    - "Luga": 3
+
+  giant_onset:
+    - "g": 8
+    - "k": 7
+    - "r": 7
+    - "t": 6
+    - "b": 6
+    - "m": 5
+    - "n": 5
+    - "v": 4
+    - "z": 3
+    - "": 2
+
+  giant_vowel:
+    - "o": 10
+    - "u": 8
+    - "a": 7
+    - "e": 5
+    - "i": 4
+    - "oo": 3
+
+  giant_coda:
+    - "g": 7
+    - "k": 7
+    - "r": 6
+    - "m": 5
+    - "n": 5
+    - "t": 5
+    - "p": 4
+    - "": 6
+
   giant_suffix_masc:
     # Reserved suffix-set for giants only
     - "us": 5
     - "": 15
 
   giant_suffix_femme:
-    - "a": 6
-    - "": 14
+    # Roots already end in feminine vowels; extra "a" doubled names like Mognaa.
+    - "": 18
+    - "a": 2
 
   giant_epithet:
-    - "Skull": 7
-    - "Rock": 7
-    - "Stomp": 6
-    - "Boulder": 6
+    - "Skull": 6
+    - "Rock": 6
+    - "Stomp": 5
+    - "Boulder": 5
     - "Club": 5
     - "Gravel": 5
-    - "Hill": 4
+    - "Hill": 5
     - "Big": 4
     - "Loud": 4
     - "Crush": 4
+    - "Thunder": 3
+    - "Iron": 3
+    - "Stone": 3
+    - "Bone": 3
+    - "Fist": 3
+    - "Foot": 3
+    - "Mud": 3
+    - "Dirt": 3
+    - "Ash": 3
+    - "Coal": 3
+    - "Rust": 3
+    - "Steel": 3
+    - "Hammer": 2
+    - "Anvil": 2
+    - "Tusk": 2
+    - "Fang": 2
+    - "Jaw": 2
+    - "Gut": 2
+    - "Neck": 2
+    - "Back": 2
+    - "Heart": 2
+    - "Blood": 2
+    - "Rage": 2
+    - "Roar": 2
+    - "Grim": 2
+    - "Wild": 2
+    - "Rough": 2
+    - "Hard": 2
+    - "Flat": 2
+    - "Deep": 2
+    - "High": 2
+    - "Low": 2
+    - "Slow": 2
+    - "Fast": 2
+    - "Cold": 2
+    - "Hot": 2
+
+  giant_epithet_first:
+    - "Loud": 5
+    - "Skull": 5
+    - "Stone": 5
+    - "Iron": 5
+    - "Thunder": 4
+    - "Blood": 4
+    - "Rough": 4
+    - "Hard": 4
+    - "Wild": 4
+    - "Grim": 4
+    - "Big": 4
+    - "Dark": 3
+    - "Grey": 3
+    - "White": 3
+    - "Black": 3
+    - "Red": 3
+    - "Gold": 3
+    - "Silver": 2
+    - "Rust": 2
+    - "Dirt": 2
+    - "Mud": 2
+
+  giant_epithet_second:
+    - "hill": 6
+    - "rock": 6
+    - "skull": 5
+    - "fist": 5
+    - "foot": 5
+    - "jaw": 5
+    - "neck": 4
+    - "back": 4
+    - "bone": 4
+    - "boulder": 4
+    - "gravel": 4
+    - "stomp": 3
+    - "club": 3
+    - "crush": 3
+    - "roar": 3
+    - "rage": 3
+    - "heart": 3
+    - "gut": 3
+    - "tusk": 3
+    - "fang": 3
+    - "maw": 2
+    - "paw": 2
+    - "hoof": 2
+    - "horn": 2

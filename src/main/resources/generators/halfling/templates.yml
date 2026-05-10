@@ -24,8 +24,8 @@ templates:
   halfling_lastname_free:
     hidden: true
     variants:
-      - "%halfling_food%%halfling_ending_last%": 60
-      - "%halfling_syllable%%halfling_syllable%%halfling_ending_last%": 40
+      - "%halfling_food%%halfling_ending_last%": 85
+      - "%halfling_syllable%%halfling_syllable%%halfling_ending_last%": 15
 
   halfling_fullname_bound:
     hidden: true
@@ -37,10 +37,17 @@ templates:
     pattern: "%halfling_firstname_free% %halfling_lastname_free%"
     cleanup: "([^aeiou])\\1+"
 
+  # Food-forward surnames (draft: Brianna Butterscotch style)
+  halfling_fullname_foody:
+    hidden: true
+    pattern: "%halfling_firstname_free% %halfling_food%%halfling_ending_last%"
+    cleanup: "([^aeiou])\\1+"
+
   halfling:
     hidden: true
     variants:
-      - "%halfling_fullname_bound%": 50
-      - "%halfling_fullname_free%": 50
+      - "%halfling_fullname_bound%": 30
+      - "%halfling_fullname_free%": 25
+      - "%halfling_fullname_foody%": 45
     capitalization: "(?<=^|\\s)."
     cleanup: "'+(?=\\s|$)"

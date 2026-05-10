@@ -12,8 +12,8 @@ templates:
   elven_firstname:
     hidden: true
     variants:
-      - "%elven_syllable_strong%%elven_syllable_weak%": 70
-      - "%elven_syllable_strong%%elven_syllable_weak%%elven_syllable_weak%": 30
+      - "%elven_syllable_strong%%elven_syllable_weak%": 88
+      - "%elven_syllable_strong%%elven_syllable_weak%%elven_syllable_weak%": 12
 
   elven_lastname_modern:
     hidden: true
@@ -26,20 +26,21 @@ templates:
     pattern: "%elven_firstname% %elven_lastname_modern%"
     capitalization: "(?<=^|\\s)."
     cleanup: "'+(?=\\s|$)"
-    maxLength: 32
+    maxLength: 22
 
   # Traditional elven name: Firstname + Syllabic Lastname
   elven_traditional_lastname:
     hidden: true
     variants:
-      - "%elven_syllable_strong%%elven_syllable_weak%"
-      - "%elven_syllable_strong%%elven_syllable_weak%%elven_syllable_weak%"
+      - "%elven_syllable_strong%%elven_syllable_weak%": 85
+      - "%elven_syllable_strong%%elven_syllable_weak%%elven_syllable_weak%": 15
   
   elven_traditional:
     hidden: true
     pattern: "%elven_firstname% %elven_traditional_lastname%"
     capitalization: "(?<=^|\\s)."
     cleanup: "'+(?=\\s|$)"
+    maxLength: 22
 
   elf:
     variants:
@@ -48,3 +49,4 @@ templates:
       - "%fae%": 10
     capitalization: "(?<=^|\\s)."
     cleanup: "'+(?=\\s|$)"
+    maxLength: 22
