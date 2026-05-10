@@ -22,7 +22,7 @@ templates:
     hidden: true
     variants:
       - "%gnome_verb%%gnome_noun%": 95
-      - "%halfling_lastname%": 5
+      - "%halfling_lastname_free%": 5
 
   gnome_masc:
     pattern: "%gnome_firstname_masc% %gnome_lastname%"
