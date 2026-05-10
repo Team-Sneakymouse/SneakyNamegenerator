@@ -124,7 +124,7 @@ templates:
       - "%dwarf_masc_core%": 58
       - "%viking_masc%": 12
       - "%halfling%": 10
-      - "%dwarf_masc_kobold_blend%": 15
+      - "%dwarf_masc_kobold_blend%": 30
     capitalization: "(?<=^|\\s)(?!of\\b)."
     cleanup: "'+(?=\\s|$)"
 
@@ -133,6 +133,6 @@ templates:
       - "%dwarf_femme_core%": 58
       - "%viking_femme%": 12
       - "%halfling%": 10
-      - "%dwarf_femme_kobold_blend%": 15
+      - "%dwarf_femme_kobold_blend%": 30
     capitalization: "(?<=^|\\s)(?!of\\b)."
     cleanup: "'+(?=\\s|$)"
