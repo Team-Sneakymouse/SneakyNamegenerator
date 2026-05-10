@@ -9,10 +9,11 @@ templates:
 
   kobold_lastname:
     hidden: true
-    pattern: "%popular_names_family_1920%"
+    pattern: "%kobold_family_names%"
 
   kobold_masc:
     pattern: "%kobold_firstname_masc% %kobold_lastname%"
+    capitalization: "(?<=^|\\s).(?!he )"
 
   kobold_femme:
     pattern: "%kobold_firstname_femme% %kobold_lastname%"

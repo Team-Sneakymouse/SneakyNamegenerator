@@ -604,3 +604,10 @@ lists:
     - "Ferguson": 1
     - "Yang": 1
     - "Le": 1
+  
+  kobold_family_names:
+    - "Kobold": 1
+    - "the Kobold": 1
+    - "McKobold": 1
+    - "Rocks" : 1
+    - "Thorson" : 1
