@@ -7,29 +7,34 @@ templates:
   goblin_firstname_masc:
     hidden: true
     variants:
-      - "%goblin_syllable%%goblin_syllable%%goblin_suffix_masc%": 65
-      - "%goblin_syllable%%goblin_suffix_masc%": 35
+      - "%goblin_syllable%%goblin_syllable%%goblin_suffix_masc%": 40
+      - "%goblin_syllable%%goblin_suffix_masc%": 60
     cleanup: "([^aeiou])\\1+"
+    maxLength: 10
 
   goblin_firstname_femme:
     hidden: true
     variants:
-      - "%goblin_syllable%%goblin_syllable%%goblin_suffix_femme%": 65
-      - "%goblin_syllable%%goblin_suffix_femme%": 35
+      - "%goblin_syllable%%goblin_syllable%%goblin_suffix_femme%": 40
+      - "%goblin_syllable%%goblin_suffix_femme%": 60
     cleanup: "([^aeiou])\\1+"
+    maxLength: 10
 
   goblin_lastname:
     hidden: true
     variants:
       - "%goblin_verb%%goblin_noun%": 80
       - "%goblin_verb%%goblin_noun%": 20
+    maxLength: 10
 
   goblin_masc:
     pattern: "%goblin_firstname_masc% %goblin_lastname%"
     capitalization: "(?<=^|\\s)."
     cleanup: "'+(?=\\s|$)"
+    maxLength: 16
 
   goblin_femme:
     pattern: "%goblin_firstname_femme% %goblin_lastname%"
     capitalization: "(?<=^|\\s)."
     cleanup: "'+(?=\\s|$)"
+    maxLength: 16

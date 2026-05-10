@@ -44,7 +44,7 @@ class GeneratorRegistry {
         val cleanToken = token.removeSurrounding("%")
         
         // Try templates first
-        templates[cleanToken]?.let { return expand(it, ctx) }
+        templates[cleanToken]?.let { return expand(it, ctx, cleanToken) }
         
         // Then lists
         lists[cleanToken]?.let { return it.pick() }
@@ -52,19 +52,28 @@ class GeneratorRegistry {
         return null
     }
 
-    private fun expand(template: NameTemplate, ctx: MutableMap<String, String>): String {
-        val raw = template.variants.pick()
-        var expanded = expandString(raw, ctx)
+    private fun expand(template: NameTemplate, ctx: MutableMap<String, String>, templateName: String = "?"): String {
+        val maxPickAttempts = 40
+        var lastExpanded = ""
+        repeat(maxPickAttempts) {
+            val raw = template.variants.pick()
+            var expanded = expandString(raw, ctx)
 
-        template.cleanupPattern?.let { pattern ->
-            expanded = expanded.replace(pattern.toRegex(), "")
+            template.cleanupPattern?.let { pattern ->
+                expanded = expanded.replace(pattern.toRegex(), "")
+            }
+
+            template.capitalizationPattern?.let { capPattern ->
+                expanded = applyCapitalization(expanded, capPattern)
+            }
+
+            lastExpanded = expanded
+            if (expanded.length <= template.maxLength) return expanded
         }
 
-        template.capitalizationPattern?.let { capPattern ->
-            expanded = applyCapitalization(expanded, capPattern)
-        }
-
-        return expanded
+        throw IllegalStateException(
+            "Template '$templateName' exceeded maxLength ${template.maxLength} (last length ${lastExpanded.length}) after $maxPickAttempts variant picks."
+        )
     }
 
     fun expandString(input: String, ctx: MutableMap<String, String> = mutableMapOf()): String {
