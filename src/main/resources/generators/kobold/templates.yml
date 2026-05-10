@@ -1,39 +1,18 @@
 templates:
-  kobold_syllable:
-    hidden: true
-    variants:
-      - "%kobold_onset%%kobold_vowel%%kobold_coda%"
-
   kobold_firstname_masc:
     hidden: true
-    variants:
-      - "%kobold_syllable%%kobold_syllable%%kobold_suffix_masc%": 60
-      - "%kobold_syllable%%kobold_suffix_masc%": 40
-    cleanup: "(.)\\1{2,}"
+    pattern: "%popular_names_masc_1920%"
 
   kobold_firstname_femme:
     hidden: true
-    variants:
-      - "%kobold_syllable%%kobold_syllable%%kobold_suffix_femme%": 60
-      - "%kobold_syllable%%kobold_suffix_femme%": 40
-    cleanup: "(.)\\1{2,}"
+    pattern: "%popular_names_femme_1920%"
 
   kobold_lastname:
     hidden: true
-    variants:
-      - "%kobold_epithet%": 60
-      - "%kobold_syllable%%kobold_syllable%": 40
+    pattern: "%popular_names_family_1920%"
 
   kobold_masc:
-    variants:
-      - "%kobold_firstname_masc% %kobold_lastname%": 85
-      - "%dwarf_masc_core%": 15
-    capitalization: "(?<=^|\\s)(?!of\\b)."
-    cleanup: "'+(?=\\s|$)"
+    pattern: "%kobold_firstname_masc% %kobold_lastname%"
 
   kobold_femme:
-    variants:
-      - "%kobold_firstname_femme% %kobold_lastname%": 85
-      - "%dwarf_femme_core%": 15
-    capitalization: "(?<=^|\\s)(?!of\\b)."
-    cleanup: "'+(?=\\s|$)"
+    pattern: "%kobold_firstname_femme% %kobold_lastname%"
