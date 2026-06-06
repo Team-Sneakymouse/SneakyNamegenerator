@@ -1,28 +1,136 @@
 templates:
+
+  # --- Whimsical (flowy syllables + nature epithets) ---
+
   fae_syllable:
+
     hidden: true
+
     variants:
+
       - "%fae_onset%%fae_nucleus%%fae_coda%"
 
+
+
   fae_firstname:
+
     hidden: true
+
     variants:
+
       - "%fae_syllable%%fae_syllable%": 90
+
       - "%fae_syllable%%fae_syllable%%fae_syllable%": 10
+
     cleanup: "(.)\\1{2,}"
+
     maxLength: 10
+
+
 
   fae_lastname:
+
     hidden: true
+
     variants:
+
       - "%fae_epithet% %fae_epithet%": 15
+
       - "%fae_epithet%": 25
+
       - "%fae_syllable%%fae_syllable%": 60
+
     cleanup: "(.)\\1{2,}"
+
     maxLength: 10
 
-  fae:
+
+
+  fae_whimsical:
+
+    hidden: true
+
     pattern: "%fae_firstname% %fae_lastname%"
+
     capitalization: "(?<=^|\\s)."
+
     cleanup: "'+(?=\\s|$)"
+
     maxLength: 16
+
+
+
+  # --- Bardic (court first names + nature-compound surnames) ---
+
+  fae_bard_court_stem:
+
+    hidden: true
+
+    variants:
+
+      - "%fae_bard_court_onset%%fae_bard_court_nucleus%%fae_bard_court_coda%"
+
+
+
+  fae_bard_court_first:
+
+    hidden: true
+
+    variants:
+
+      - "%fae_bard_court_stem%%fae_bard_suffix_court%": 97
+
+      - "%fae_bard_court_stem%%fae_bard_court_stem%%fae_bard_suffix_court%": 3
+
+    cleanup: "(.)\\1{2,}|[aeiou]{3,}"
+
+    maxLength: 10
+
+
+
+  fae_bard_lastname:
+
+    hidden: true
+
+    variants:
+
+      - "%fae_bard_root_a%%fae_bard_root_b%": 100
+
+    cleanup: "(.)\\1{2,}"
+
+    maxLength: 10
+
+
+
+  fae_bardic:
+
+    hidden: true
+
+    pattern: "%fae_bard_court_first% %fae_bard_lastname%"
+
+    capitalization: "(?<=^|\\s)."
+
+    cleanup: "'+(?=\\s|$)"
+
+    maxLength: 16
+
+
+
+  fae:
+
+    variants:
+
+      - "%fae_whimsical%": 68
+
+      - "%fae_bardic%": 27
+
+      - "Puck %fae_bard_lastname%": 3
+
+      - "Moth %fae_bard_lastname%": 2
+
+    capitalization: "(?<=^|\\s)."
+
+    cleanup: "'+(?=\\s|$)"
+
+    maxLength: 16
+

@@ -127,3 +127,266 @@ lists:
     - "Honey": 2
     - "Nectar": 2
     - "Sap": 1
+
+  # Court stems (Oberon / Titania — open, Latinate; stem + suffix)
+  fae_bard_court_onset:
+    - "t": 9
+    - "r": 7
+    - "l": 7
+    - "n": 6
+    - "m": 6
+    - "s": 5
+    - "ob": 6
+    - "aur": 5
+    - "mel": 5
+    - "sil": 5
+    - "ros": 4
+    - "lys": 4
+    - "eur": 4
+    - "pel": 4
+    - "cor": 4
+    - "mor": 4
+    - "hel": 4
+    - "ael": 4
+    - "iel": 3
+    - "oph": 2
+    - "phi": 2
+    - "cal": 2
+    - "val": 2
+
+  fae_bard_court_nucleus:
+    - "itan": 10
+    - "ober": 9
+    - "aurel": 7
+    - "melan": 7
+    - "ander": 6
+    - "endil": 5
+
+  fae_bard_court_coda:
+    - "": 45
+    - "r": 3
+
+  # Final syllable glued to stem (Ober+on, Titan+ia)
+  fae_bard_suffix_court:
+    - "ia": 11
+    - "on": 10
+    - "ius": 5
+    - "iel": 4
+    - "ine": 4
+
+  # Chunky syllables (surname fallback only)
+  fae_bard_onset:
+    - "p": 9
+    - "b": 8
+    - "m": 8
+    - "t": 7
+    - "c": 7
+    - "k": 6
+    - "f": 6
+    - "w": 5
+    - "h": 4
+    - "d": 4
+    - "g": 3
+    - "": 6
+
+  fae_bard_nucleus:
+    - "u": 10
+    - "o": 9
+    - "a": 8
+    - "i": 7
+    - "e": 6
+    - "oo": 3
+    - "ea": 2
+
+  fae_bard_coda:
+    - "": 12
+    - "k": 8
+    - "ck": 6
+    - "th": 6
+    - "m": 5
+    - "n": 5
+    - "t": 5
+    - "p": 4
+    - "b": 4
+    - "f": 3
+    - "g": 3
+    - "d": 2
+
+  # Nature-compound morphemes (Peaseblossom / Cobweb style — building blocks, not full names)
+  fae_bard_root_a:
+    - "Pea": 7
+    - "Cob": 5
+    - "Dew": 5
+    - "Moth": 4
+    - "Bee": 4
+    - "Ant": 4
+    - "Oak": 4
+    - "Ash": 4
+    - "Elm": 3
+    - "Fern": 3
+    - "Moss": 3
+    - "Frog": 3
+    - "Toad": 3
+    - "Hawk": 2
+    - "Wren": 2
+    - "Lark": 2
+    - "Hare": 2
+    - "Fox": 2
+    - "Nut": 3
+    - "Seed": 3
+    - "Corn": 3
+    - "Bean": 3
+    - "Hop": 2
+    - "Hay": 2
+    - "Flax": 2
+    - "Wool": 2
+    - "Down": 2
+    - "Fog": 2
+    - "Mist": 2
+    - "Rain": 2
+    - "Snow": 2
+    - "Ice": 2
+    - "Fire": 2
+    - "Ember": 2
+    - "Smoke": 2
+    - "Salt": 2
+    - "Honey": 2
+    - "Clover": 2
+    - "Thyme": 2
+    - "Sage": 2
+    - "Mint": 2
+    - "Rose": 2
+    - "Lily": 2
+    - "Ivy": 2
+    - "Briar": 2
+    - "Bramble": 1
+    - "Berry": 2
+    - "Apple": 2
+    - "Plum": 2
+    - "Pear": 2
+    - "Cherry": 1
+    - "Crab": 2
+    - "Snail": 1
+    - "Spider": 1
+    - "Gnat": 3
+    - "Fly": 2
+    - "Midge": 1
+    - "Grub": 2
+    - "Worm": 2
+    - "Slug": 1
+    - "Mouse": 1
+    - "Shrew": 1
+    - "Bat": 2
+    - "Owl": 1
+    - "Crow": 1
+    - "Mustard": 2
+    - "Pepper": 1
+    - "Ginger": 1
+    - "Barley": 1
+    - "Rye": 1
+    - "Oat": 1
+    - "Bran": 1
+    - "Chaff": 1
+    - "Straw": 1
+
+  fae_bard_root_b:
+    - "blossom": 6
+    - "web": 6
+    - "seed": 5
+    - "bell": 7
+    - "cup": 4
+    - "cap": 4
+    - "wort": 4
+    - "brush": 4
+    - "bloom": 4
+    - "drop": 3
+    - "dust": 3
+    - "wing": 3
+    - "tail": 3
+    - "foot": 3
+    - "toe": 2
+    - "eye": 2
+    - "ear": 2
+    - "nose": 1
+    - "lip": 1
+    - "chin": 1
+    - "bone": 2
+    - "shell": 2
+    - "scale": 2
+    - "fin": 2
+    - "gill": 1
+    - "thorn": 3
+    - "leaf": 3
+    - "bud": 3
+    - "pod": 3
+    - "husk": 2
+    - "rind": 2
+    - "peel": 1
+    - "skin": 2
+    - "hair": 2
+    - "down": 2
+    - "fluff": 2
+    - "fuzz": 2
+    - "wool": 2
+    - "silk": 2
+    - "thread": 2
+    - "spool": 1
+    - "ball": 2
+    - "knot": 2
+    - "loop": 1
+    - "ring": 2
+    - "chime": 1
+    - "song": 2
+    - "whistle": 1
+    - "hum": 1
+    - "buzz": 2
+    - "drone": 1
+    - "sting": 3
+    - "bite": 2
+    - "fang": 1
+    - "claw": 2
+    - "tooth": 1
+    - "root": 2
+    - "stalk": 2
+    - "stem": 2
+    - "vine": 2
+    - "tendril": 1
+    - "sprig": 2
+    - "twig": 2
+    - "bough": 1
+    - "sap": 2
+    - "gum": 1
+    - "resin": 1
+    - "tar": 1
+    - "pitch": 1
+    - "muck": 1
+    - "mud": 2
+    - "clay": 1
+    - "chalk": 1
+    - "stone": 2
+    - "flint": 1
+    - "spark": 2
+    - "glow": 2
+    - "gleam": 2
+    - "glimmer": 1
+    - "shade": 2
+    - "gloom": 1
+    - "beam": 1
+    - "ray": 2
+    - "mote": 2
+    - "speck": 2
+    - "spot": 1
+    - "stain": 1
+    - "blot": 1
+    - "smear": 1
+    - "streak": 1
+    - "stripe": 1
+    - "vein": 1
+    - "pulse": 1
+    - "beat": 1
+    - "drum": 1
+    - "pipe": 1
+    - "reed": 2
+    - "rush": 3
+    - "sedge": 1
+    - "flag": 1
