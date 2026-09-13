@@ -2,6 +2,6 @@ name: SneakyNamegenerator
 version: '${version}'
 main: com.sneakynamegenerator.SneakyNamegenerator
 description: A flexible fantasy name generator plugin with weighted lists and interactive chat UI.
-api-version: '1.21'
+api-version: '26.2'
 authors: [Team Sneakymouse]
 website: https://rawb.tv

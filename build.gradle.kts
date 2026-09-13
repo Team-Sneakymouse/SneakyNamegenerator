@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "1.9.21"
+    kotlin("jvm") version "2.3.0"
     id("xyz.jpenilla.run-paper") version "3.0.2"
     application
 }
@@ -18,25 +18,25 @@ repositories {
 
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.21")
+    compileOnly("io.papermc.paper:paper-api:26.2.build.+")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:2.3.0")
     implementation("com.google.code.gson:gson:2.10.1")
     implementation("org.yaml:snakeyaml:2.2")
 }
 
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(25)
 }
 
 tasks {
     compileKotlin {
-        kotlinOptions {
-            jvmTarget = "21"
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_25)
         }
     }
     
     runServer {
-        minecraftVersion("1.21.4")
+        minecraftVersion("26.2")
     }
     
     jar {
@@ -44,4 +44,3 @@ tasks {
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 }
-

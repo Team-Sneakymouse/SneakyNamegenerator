@@ -1,6 +1,6 @@
 # SneakyNamegenerator
 
-A powerful, data-driven fantasy name generator plugin for Minecraft (Paper 1.21.4). Create complex, linguistically authentic names using a recursive template engine with weighted lists and interactive chat features.
+A powerful, data-driven fantasy name generator plugin for Minecraft (Paper 26.2). Create complex, linguistically authentic names using a recursive template engine with weighted lists and interactive chat features.
 
 ## Features
 
