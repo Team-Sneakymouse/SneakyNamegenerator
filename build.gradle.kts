@@ -1,21 +1,34 @@
+import java.time.Instant
+import java.time.ZoneOffset
+import java.time.format.DateTimeFormatter
+
 plugins {
     kotlin("jvm") version "2.3.0"
     id("xyz.jpenilla.run-paper") version "3.0.2"
     application
+    `maven-publish`
 }
 
 application {
     mainClass.set("com.sneakynamegenerator.MainKt")
 }
 
-group = "com.sneakynamegenerator"
-version = "1.0.0"
+group = "io.github.team-sneakymouse"
+
+version = providers.exec {
+    workingDir(rootDir)
+    commandLine("git", "show", "-s", "--format=%ct:%h", "--abbrev=12", "HEAD")
+}.standardOutput.asText.map { commit ->
+    val (timestamp, hash) = commit.trim().split(":", limit = 2)
+    val date = DateTimeFormatter.ofPattern("yyyy.MM.dd").withZone(ZoneOffset.UTC)
+        .format(Instant.ofEpochSecond(timestamp.toLong()))
+    "$date-$hash"
+}.get()
 
 repositories {
     mavenCentral()
     maven("https://repo.papermc.io/repository/maven-public/")
 }
-
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:26.2.build.+")
@@ -34,13 +47,55 @@ tasks {
             jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_25)
         }
     }
-    
+
     runServer {
         minecraftVersion("26.2")
     }
-    
+
+    processResources {
+        inputs.property("version", project.version.toString())
+        filesMatching("paper-plugin.yml") {
+            expand("version" to project.version.toString())
+        }
+    }
+
     jar {
+        archiveBaseName.set(rootProject.name)
         from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            artifactId = rootProject.name
+            artifact(tasks.jar) {
+                classifier = null
+            }
+            pom {
+                name.set(rootProject.name)
+                description.set("A flexible fantasy name generator plugin with weighted lists and interactive chat UI.")
+                url.set("https://github.com/Team-Sneakymouse/SneakyNamegenerator")
+                scm {
+                    url.set("https://github.com/Team-Sneakymouse/SneakyNamegenerator")
+                    connection.set("scm:git:https://github.com/Team-Sneakymouse/SneakyNamegenerator.git")
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = "sneakyrp"
+            url = uri("https://maven.sneakyrp.com/releases")
+            credentials(PasswordCredentials::class)
+            authentication {
+                create<org.gradle.authentication.http.BasicAuthentication>("basic")
+            }
+        }
+    }
+}
+
+tasks.withType<PublishToMavenRepository>().configureEach {
+    dependsOn(tasks.check)
 }
