@@ -77,6 +77,7 @@ publishing {
                 name.set(rootProject.name)
                 description.set("A flexible fantasy name generator plugin with weighted lists and interactive chat UI.")
                 url.set("https://github.com/Team-Sneakymouse/SneakyNamegenerator")
+                properties.put("sneakyrp.deployment.type", "paper-plugin")
                 scm {
                     url.set("https://github.com/Team-Sneakymouse/SneakyNamegenerator")
                     connection.set("scm:git:https://github.com/Team-Sneakymouse/SneakyNamegenerator.git")
