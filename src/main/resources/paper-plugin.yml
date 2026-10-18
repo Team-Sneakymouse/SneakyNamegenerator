@@ -5,3 +5,9 @@ description: A flexible fantasy name generator plugin with weighted lists and in
 api-version: '26.2'
 authors: [Team Sneakymouse]
 website: https://rawb.tv
+dependencies:
+  server:
+    SneakyUtils:
+      load: BEFORE
+      required: true
+      join-classpath: true
