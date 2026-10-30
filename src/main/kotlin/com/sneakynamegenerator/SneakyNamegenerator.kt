@@ -60,6 +60,8 @@ class SneakyNamegenerator : JavaPlugin() {
                 saveResource("config.yml", false)
             }
 
+            // A new generator id needs its own ensureGeneratorPack call here. Files already on the server are never
+            // overwritten, so apply the same edit to the server copy under generators/<id>/.
             ensureGeneratorPack(
                 "elven",
                 listOf("components.yml", "templates.yml")
